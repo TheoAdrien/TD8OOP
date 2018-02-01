@@ -1,4 +1,4 @@
-\documentclass[a4paper,10pt,french]{article}
+\documentclass[a4paper,10pt]{article}
 
 \newcommand{\currentVersion}{1.3}
 
@@ -167,7 +167,7 @@
 %\newcommand{\R}{\mathbb{R}}
 %\newcommand{\C}{\mathbb{C}}
 
-\usepackage[francais]{babel}
+%\usepackage[francais]{babel}
 %\usepackage{frenchle}
 
 
@@ -254,7 +254,7 @@ Puisque \texttt{ArrayList} est une classe générique alors que tous les éléments 
  Ajoutez à la classe \texttt{Promo} les méthodes \texttt{getMinGrade()}, \texttt{getMaxGrade()} et \texttt{getAverageGrade()}.
 %Vous aurez peut-être besoin des fonctions \texttt{Math.min(...)} et \texttt{Math.max(...)}.
 Vous trouverez dans la classe \texttt{Math}\footnoteURL{http://docs.oracle.com/javase/7/docs/api/java/lang/Math.html} plusieurs méthodes utiles.
-Pour parcourir tous les étudiants qui constituent la promotion, vous pouvez vous inspirer de la section \og{}\textit{Traversing collections}\fg{}\footnoteURL{http://docs.oracle.com/javase/tutorial/collections/interfaces/collection.html}.
+Pour parcourir tous les étudiants qui constituent la promotion, vous pouvez vous inspirer de la section ``\textit{Traversing collections}''\footnoteURL{http://docs.oracle.com/javase/tutorial/collections/interfaces/collection.html}.
 Félicitez-vous d'avoir fait hériter \texttt{Promo} de \texttt{ArrayList}.
 \end{etape}
 
@@ -263,7 +263,7 @@ Félicitez-vous d'avoir fait hériter \texttt{Promo} de \texttt{ArrayList}.
 \end{etape}
 
 \begin{etape}
- La classe \texttt{PromoLoader} (\fixme{fournie sur l'ENT}) fournit une méthode \texttt{loadTsvFile(...)} qui utilise un fichier texte (un étudiant par ligne~; l'identifiant et la note sont séparés par une tabulation) pour construire une instance de \texttt{Promo}. Pourquoi la méthode \texttt{loadTsvFile(...)} est-elle déclarée \og{}\texttt{static}\fg{}~? Faites le parallèle avec les méthodes \texttt{min(...)}, \texttt{max(...)} et \texttt{abs(...)} de la classe \texttt{Math}.
+ La classe \texttt{PromoLoader} (\fixme{fournie sur l'ENT}) fournit une méthode \texttt{loadTsvFile(...)} qui utilise un fichier texte (un étudiant par ligne~; l'identifiant et la note sont séparés par une tabulation) pour construire une instance de \texttt{Promo}. Pourquoi la méthode \texttt{loadTsvFile(...)} est-elle déclarée ``\texttt{static}''~? Faites le parallèle avec les méthodes \texttt{min(...)}, \texttt{max(...)} et \texttt{abs(...)} de la classe \texttt{Math}.
 \end{etape}
 
 
@@ -314,7 +314,7 @@ Après clustering, un cluster complexe est constitué de sous-clusters qui peuvent
 \begin{figure}[ht]
  \centering
  %\includegraphics[width=60mm]{figures/dendrogram-grades-flat.png}
- \includegraphics[width=60mm]{figures/dendrogram-grades-flat.pdf}
+ \includegraphics[width=60mm]{images/dendrogram-grades-flat.pdf}
  \caption{Cluster complexe dans l'état initial~: il est composé de cinq sous-clusters simples, composés chacun d'un étudiant.}
  \label{fig:dendrogramFlat}
 \end{figure}
@@ -323,7 +323,7 @@ Après clustering, un cluster complexe est constitué de sous-clusters qui peuvent
 \begin{figure}[ht]
  \centering
  %\includegraphics[width=60mm]{figures/dendrogram-grades-clusterized.png}
- \includegraphics[width=60mm]{figures/dendrogram-grades-clusterized.pdf}
+ \includegraphics[width=60mm]{images/dendrogram-grades-clusterized.pdf}
  \caption{Cluster complexe après clustering. Il est composé de deux sous-clusters complexes. Le premier est à son tour composé de deux sous-clusters simples (geo et loulou). Le second est composé d'un sous-cluster simple (donald) et d'un sous-cluster complexe composé de deux sous-clusters simples (riri et fifi).}
  \label{fig:dendrogramClusterized}
 \end{figure}
@@ -396,7 +396,7 @@ La figure~\ref{fig:dendrogramClusterized-m1bigBranchLength} montre qu'en rendant
 \begin{figure}[ht]
  \centering
  %\includegraphics[width=60mm]{figures/dendrogram-grades-m1big.png}
- \includegraphics[width=120mm]{figures/dendrogram-grades-m1big.pdf}
+ \includegraphics[width=120mm]{images/dendrogram-grades-m1big.pdf}
  \caption{Cluster complexe après clustering.}
  \label{fig:dendrogramClusterized-m1big}
 \end{figure}
@@ -405,7 +405,7 @@ La figure~\ref{fig:dendrogramClusterized-m1bigBranchLength} montre qu'en rendant
 \begin{figure}[ht]
  \centering
  %\includegraphics[width=60mm]{figures/dendrogram-grades-branchLength.png}
- \includegraphics[width=120mm]{figures/dendrogram-grades-branchLength.pdf}
+ \includegraphics[width=120mm]{images/dendrogram-grades-branchLength.pdf}
  \caption{Cluster complexe après clustering. La longueur des branches est proportionnelle à la distance séparant les deux clusters fusionnés.}
  \label{fig:dendrogramClusterized-m1bigBranchLength}
 \end{figure}

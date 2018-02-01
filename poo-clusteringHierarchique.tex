@@ -1,0 +1,466 @@
+\documentclass[a4paper,10pt,french]{article}
+
+\newcommand{\currentVersion}{1.3}
+
+
+%%% MARGES
+%
+% 21cm = 8.27in
+%
+% marge gauche = 1in + oddsidemargin
+%\oddsidemargin 0.5in
+%\textwidth 5.27in
+
+%%% Pour le français
+% \usepackage[T1]{fontenc}
+% \usepackage[latin1]{inputenc}
+% \usepackage[francais]{babel}
+% \selectlanguage{francais}
+
+%%% Packages supplémentaires
+%\usepackage{vrsion}
+\usepackage{graphicx}
+%\usepackage{amsmath}
+%\usepackage{amssymb}
+\usepackage{varioref}
+%\usepackage{frenchle}
+\usepackage[latin1]{inputenc}
+
+\usepackage[pdftex]{hyperref}
+%\usepackage{index}
+%\usepackage{makeidx}
+%\usepackage{varioref}
+%\usepackage{array}
+\usepackage{moreverb}
+
+%\usepackage{aeguill}
+%\usepackage{eurosym}
+
+\usepackage{color}
+\newcommand{\fixme}[1]{\textcolor{red}{\textbf{FIXME}: #1}}
+\newcommand{\todo}[1]{\textcolor{blue}{\textbf{TODO}: #1}}
+
+
+%\newtheorem{definition}{Définition}
+%\newtheorem{proposition}{Proposition}
+\newtheorem{exercice}{Exercice}
+%\newtheorem{theorem}{Théorème}
+\newtheorem{etape}{Step}
+
+%\newcommand{\nobodyUniv}{\texttt{nobody@univ-rennes1.fr}}
+%\newcommand{\nomListeDiscussion}{c2i-b6-med}
+%\newcommand{\listeDiscussion}{\texttt{\nomListeDiscussion}}
+
+%\newcommand{\etAl}[0]{\textit{et al.}}
+%\newcommand{\gl}[0]{\guillemotleft~}
+%\newcommand{\gr}[0]{~\guillemotright{}}
+%\newcommand{\footnoteURL}[1]{\footnote{\texttt{#1}}}
+%\newcommand{\footnoteURL}[1]{\footnote{\texttt{\href{#1}{#1}}}}
+%\newcommand{\footnoteURL}[1]{\footnote{\href{#1}{\texttt{#1}}}}
+\newcommand{\footnoteURL}[1]{\footnote{\url{#1}}}
+\newcommand{\footnoteURLlabel}[2]{\footnote{\href{#1}{\texttt{#2}}}}
+\newcommand{\footnoteURLnomee}[2]{\footnote{\label{#2}\url{#1}}}
+
+%\newcommand{\balise}[1]{\texttt{<#1>}}
+%\newcommand{\baliseSimple}[1]{\texttt{<#1/>}}
+%\newcommand{\baliseDouble}[1]{\texttt{<#1></#1>}}
+
+%\newcommand{\DLname}[1]{\ensuremath{\mathcal{#1}}}
+%\newcommand{\concept}[1]{\texttt{#1}}
+%\newcommand{\role}[1]{\texttt{\textit{#1}}}
+
+%\newcommand{\coordCellule}[1]{\texttt{#1}}
+
+\newcommand{\definitionEncadree}[2]{
+% 1er param: texte de la définition
+% 2nd param: étiquette
+\paragraph{}
+\fbox{
+\begin{minipage}{0.9\textwidth}
+ \begin{definition}
+  \label{#2}
+  #1
+ \end{definition}
+\end{minipage}
+}
+\paragraph{}
+}
+
+\newcommand{\definitionEncadreeNommee}[3]{
+% 1er param: texte de la définition
+% 2nd param: nom de la définition
+% 3eme param: étiquette
+\paragraph{}
+\fbox{
+\begin{minipage}{0.9\textwidth}
+ \begin{definition}[#1]
+  \label{#3}
+  #2
+ \end{definition}
+\end{minipage}
+}
+\paragraph{}
+}
+
+\newcommand{\etapeEncadree}[2]{
+% 1er param: texte de l'etape
+% 2nd param: etiquette
+%\paragraph{}
+%\fbox{
+\begin{minipage}{0.9\textwidth}
+ \begin{etape}
+  \label{#2}
+  #1
+ \end{etape}
+\end{minipage}
+%}
+\paragraph{}
+}
+
+\newcommand{\exerciceEncadre}[2]{
+% 1er param: texte de l'exercice
+% 2nd param: étiquette
+\paragraph{}
+\fbox{
+\begin{minipage}{0.9\textwidth}
+ \begin{exercice}
+  \label{#2}
+  #1
+ \end{exercice}
+\end{minipage}
+}
+\paragraph{}
+}
+\newcommand{\theoremeEncadre}[2]{
+% 1er param: texte du théorème
+% 2nd param: étiquette
+\paragraph{}
+\fbox{
+\begin{minipage}{0.9\textwidth}
+ \begin{theorem}
+  \label{#2}
+  #1
+ \end{theorem}
+\end{minipage}
+}
+\paragraph{}
+}
+\newcommand{\theoremeEncadreNomme}[3]{
+% 1er param: nom du théorème
+% 2nd param: texte du théorème
+% 3eme param: étiquette
+\paragraph{}
+\fbox{
+\begin{minipage}{0.9\textwidth}
+ \begin{theorem}[#1]
+  \label{#3}
+  #2
+ \end{theorem}
+\end{minipage}
+}
+\paragraph{}
+}
+%\newcommand{\N}{\mathbb{N}}
+%\newcommand{\Z}{\mathbb{Z}}
+%\newcommand{\D}{\mathbb{D}}
+%\newcommand{\Q}{\mathbb{Q}}
+%\newcommand{\R}{\mathbb{R}}
+%\newcommand{\C}{\mathbb{C}}
+
+\usepackage[francais]{babel}
+%\usepackage{frenchle}
+
+
+% Numérotation des subsubsection
+%\addtocounter{secnumdepth}{1}
+
+
+%opening
+\title{Master~1 Bioinformatique\\~\\\textbf{Object-oriented programming}}
+\author{Olivier Dameron\\ \texttt{olivier.dameron@univ-rennes1.fr}}
+
+\begin{document}
+
+\maketitle
+
+Version~\currentVersion
+
+% \begin{abstract}
+% 
+% \end{abstract}
+
+
+
+
+\section{Objective}
+\label{sec:objective}
+
+This project's goal is to classify a set of students according to their grades, and to generate the corresponding dendrogram.
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=60mm]{./images/xkcd_867_dendrograms.png}
+ \caption{xkcd 867 (\texttt{http://xkcd.com/867/})}
+ \label{fig:xkcd867}
+\end{figure}
+
+
+
+\section{Representing a class of students}
+
+\subsection{Class \texttt{Student}: methods overload}
+
+\begin{etape}
+ Créez une classe \texttt{Student} qui représente un étudiant. Chaque étudiant est caractérisé par son identifiant (une chaîne de caractères) et une note (un double). 
+\end{etape}
+
+\begin{etape}
+ Ajoutez un constructeur qui prend en paramètres un identifiant et une note, et un second constructeur qui prend en paramètre un identifiant. C'est une excellente occasion d'utiliser la surcharge...
+\end{etape}
+
+\begin{etape}
+\label{etape:studentMethods}
+ Ajoutez les méthodes \texttt{getIdent()}, \texttt{getGrade()} et \texttt{setGrade(double newGrade)}.
+\end{etape}
+
+
+\begin{etape}
+ Dans le \texttt{main(...)}, créez les instances suivantes et vérifiez que les méthodes de l'étape~\ref{etape:studentMethods} fonctionnent correctement~:
+\end{etape}
+
+\begin{listing}{1}
+Student riri = new Student("riri", 12.5);
+Student fifi = new Student("fifi", 14.0);
+Student loulou = new Student("loulou", 18.5);
+Student geo = new Student("geo", 19.5);
+Student donald = new Student("donald", 10.5);
+\end{listing}
+
+
+
+\subsection{Classe \texttt{Promo}~: héritage et méthodes statiques}
+
+
+\begin{etape}
+ Créez une classe \texttt{Promo} qui représente une promotion d'étudiants. \texttt{Promo} est une sous-classe de \texttt{java.util.ArrayList}\footnoteURL{http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html}. Profitez-en pour lire la documentation de \texttt{ArrayList}, vous allez bientôt en avoir besoin.
+Puisque \texttt{ArrayList} est une classe générique alors que tous les éléments de \texttt{Promo} sont des instances de \texttt{Student}, il faut en fait dire que \texttt{Promo} est une sous-classe de \texttt{ArrayList<Student>}. 
+\end{etape}
+
+\begin{etape}
+ Dans le \texttt{main(...)} de \texttt{Promo}, créez une instance \texttt{m1big} de \texttt{Promo}, et ajoutez-y \texttt{riri}, \texttt{fifi}, \texttt{geo}, \texttt{donald} et \texttt{loulou} (respectez cet ordre afin que les notes les plus hautes et les plus basses soient au milieu de la liste lors de l'étape suivante puis du clustering).
+\end{etape}
+
+\begin{etape}
+ Ajoutez à la classe \texttt{Promo} les méthodes \texttt{getMinGrade()}, \texttt{getMaxGrade()} et \texttt{getAverageGrade()}.
+%Vous aurez peut-être besoin des fonctions \texttt{Math.min(...)} et \texttt{Math.max(...)}.
+Vous trouverez dans la classe \texttt{Math}\footnoteURL{http://docs.oracle.com/javase/7/docs/api/java/lang/Math.html} plusieurs méthodes utiles.
+Pour parcourir tous les étudiants qui constituent la promotion, vous pouvez vous inspirer de la section \og{}\textit{Traversing collections}\fg{}\footnoteURL{http://docs.oracle.com/javase/tutorial/collections/interfaces/collection.html}.
+Félicitez-vous d'avoir fait hériter \texttt{Promo} de \texttt{ArrayList}.
+\end{etape}
+
+\begin{etape}
+ Dans le \texttt{main(...)} de \texttt{Promo}, ajoutez le code pour afficher la plus basse note, la plus haute note et la moyenne de \texttt{m1big}.
+\end{etape}
+
+\begin{etape}
+ La classe \texttt{PromoLoader} (\fixme{fournie sur l'ENT}) fournit une méthode \texttt{loadTsvFile(...)} qui utilise un fichier texte (un étudiant par ligne~; l'identifiant et la note sont séparés par une tabulation) pour construire une instance de \texttt{Promo}. Pourquoi la méthode \texttt{loadTsvFile(...)} est-elle déclarée \og{}\texttt{static}\fg{}~? Faites le parallèle avec les méthodes \texttt{min(...)}, \texttt{max(...)} et \texttt{abs(...)} de la classe \texttt{Math}.
+\end{etape}
+
+
+
+
+\section{Clustering hiérarchique}
+\label{sec:clustering}
+
+\subsection{Principe}
+\label{sec:clusteringPrincipes}
+
+\subsubsection{Approches agglomérative et divisive}
+
+La classification consiste à organiser des éléments en groupes basés sur leurs similarités ou leurs différences.
+
+Le clustering hiérarchique consiste à organiser ces éléments en sous-groupes imbriqués les uns dans les autres de façon arborescente.
+Il y a deux façon de procéder~:
+\begin{itemize}
+ \item l'approche agglomérative (aussi appelée ascendante) commence par créer un cluster par élément, puis crée successivement un nouveau cluster regroupant les deux clusters les plus similaires jusqu'à ce qu'il ne reste plus qu'un seul cluster~;
+ \item l'approche divisive (aussi appelée descendante) commence par rassembler tous les éléments dans un seul cluster puis à le décomposer successivement en sous-clusters jusqu'à ce que tous les clusters ne soient plus constitués que d'un seul élément.
+\end{itemize}
+
+L'approche divisive nécessite plus d'opérations que l'approche agglomérative et est donc plus longue... sauf si on n'a besoin que des clusters de plus haut niveaux (par exemple pour séparer un échantillon en deux groupes).
+
+
+\subsubsection{Mesures de distance entre éléments et entre clusters}
+
+Pour l'approche agglomérative comme pour l'approche divisive, le clustering dépend de deux paramètres principaux~:
+\begin{itemize}
+ \item une \textbf{mesure de distance entre éléments} (appelée simplement \emph{distance}). Il en existe plusieurs classiques~: la distance euclidienne, la distance de Manhattan... Dans notre cas, on considérera que la distance entre deux étudiants est la valeur absolue de la différence de leurs notes~;
+ \item une \textbf{mesure de distance entre clusters} (appelée \emph{linkage}), qui utilise la distance entre les éléments des deux clusters. Là encore il en existe plusieurs classiques~: la moyenne des distances de toutes les combinaisons d'éléments, le maximum, le minimum... Dans notre cas, on considérera que la distance entre deux clusters d'étudiants est la moyenne des distances entre tous les éléments du premier cluster et tous les éléments du second cluster.
+\end{itemize}
+
+
+
+\subsection{Classe \texttt{ClusterOfStudents}}
+
+
+
+Le but de cette section est de mettre en {\oe}uvre la classe \texttt{ClusterOfStudents} qui représente un cluster d'instances de la classe \texttt{Student}. 
+Un cluster simple n'est constitué que d'une seule instance de \texttt{Student}.
+Un cluster complexe est constitué de plusieurs sous-clusters qui peuvent être chacun des clusters simples ou des clusters complexes.
+Un cluster complexe a donc une structure d'arbre dont les feuilles sont toujours des clusters simples.
+À l'état initial, un cluster complexe est constitué uniquement de clusters simples (Fig.~\ref{fig:dendrogramFlat}).
+Après clustering, un cluster complexe est constitué de sous-clusters qui peuvent être des clusters complexes intermédiaires (Fig.~\ref{fig:dendrogramClusterized})
+
+
+\begin{figure}[ht]
+ \centering
+ %\includegraphics[width=60mm]{figures/dendrogram-grades-flat.png}
+ \includegraphics[width=60mm]{figures/dendrogram-grades-flat.pdf}
+ \caption{Cluster complexe dans l'état initial~: il est composé de cinq sous-clusters simples, composés chacun d'un étudiant.}
+ \label{fig:dendrogramFlat}
+\end{figure}
+
+
+\begin{figure}[ht]
+ \centering
+ %\includegraphics[width=60mm]{figures/dendrogram-grades-clusterized.png}
+ \includegraphics[width=60mm]{figures/dendrogram-grades-clusterized.pdf}
+ \caption{Cluster complexe après clustering. Il est composé de deux sous-clusters complexes. Le premier est à son tour composé de deux sous-clusters simples (geo et loulou). Le second est composé d'un sous-cluster simple (donald) et d'un sous-cluster complexe composé de deux sous-clusters simples (riri et fifi).}
+ \label{fig:dendrogramClusterized}
+\end{figure}
+
+
+\subsubsection{Initialisation}
+\label{sec:clusterInitialisation}
+
+\begin{etape}
+ Créez la classe \texttt{ClusterOfStudents} avec un attribut \texttt{subclusters} qui représente la liste des sous-clusters. Pour simplifier l'étape de clustering où il est nécessaire de parcourir la liste des étudiants composant un cluster, on ajoute l'attribut \texttt{students} qui représente la liste des étudiants constituant les feuilles du cluster.
+\end{etape}
+
+\begin{etape}
+ Ajoutez un constructeur par défaut \texttt{ClusterOfStudents()} qui crée un cluster vide (on ne devrait pas en avoir besoin, mais c'est plus propre), un constructeur \texttt{ClusterOfStudents(Student aStudent)} qui crée un cluster simple, et un constructeur \texttt{ClusterOfStudents(Promo aPromo)} qui crée un cluster complexe dans l'état initial.
+\end{etape}
+
+\begin{etape}
+\label{etape:clusterInitialisationM1big}
+ Dans le \texttt{main(...)} de \texttt{ClusterOfStudents}, créez une instance de cluster simple \texttt{geoCluster} initialisée avec \texttt{geo}, et une instance de cluster complexe \texttt{bigCluster} initialisée avec \texttt{m1big}.
+\end{etape}
+
+
+
+
+\subsubsection{Visualisation}
+\label{sec:visualisation}
+
+Le format Newick\footnoteURL{http://evolution.genetics.washington.edu/phylip/newicktree.html} permet une représentation simple des arbres et des dendrogrammes, qui est compris par de nombreux outils de visualisation.
+Vous pourrez par exemple utiliser le serveur web Tree Viewer\footnoteURL{http://www.proweb.org/treeviewer/} ou T-REX\footnoteURL{http://www.trex.uqam.ca/} ou les programmes FigTree\footnoteURL{http://tree.bio.ed.ac.uk/software/figtree/} dendroscope\footnoteURL{http://ab.inf.uni-tuebingen.de/software/dendroscope/} (utilisation académique libre, il n'est pas nécessaire d'obtenir une licence pour les fonctions de base).
+FigTree est celui qui semble donner les meilleurs résultats.
+
+Le dendrogramme de la figure~\ref{fig:dendrogramFlat} peut être représenté par\\ \texttt{(riri,fifi,loulou,geo,donald);}\\ et celui de la figure~\ref{fig:dendrogramClusterized} par\\ \texttt{((loulou,geo),(donald,(riri,fifi)));}.
+
+NB~: pour la visualisation, on aurait aussi pu utiliser les fonctions de R via le binding Java--R, mais c'est plus compliqué, et puis l'exercice de générer des fichiers au format Newick était intéressant.
+
+\begin{etape}
+ Ajoutez une méthode \texttt{getNewick()} qui renvoie une chaîne de caractères représentant le dendrogramme au format Newick.
+À cause du point-virgule final, vous aurez peut-être besoin d'introduire une fonction intermédiaire \texttt{getNewickIntermediate()}. Puisqu'il s'agit d'un parcours d'arbre, vous vous simplifierez la vie en adoptant une approche récursive. Quelle devra être la visibilité de ces méthodes (publique, protégée, privée)~?
+\end{etape}
+
+\begin{etape}
+ Générez la représentation de \texttt{bigCluster} au format Newick et vérifiez (par exemple avec T-REX ou dendroscope) qui vous obtenez quelque chose de similaire à la figure~\ref{fig:dendrogramFlat}.
+\end{etape}
+
+
+
+
+\subsubsection{Clustering}
+
+\begin{etape}
+ Ajoutez une méthode \texttt{linkage(ClusterOfStudents anotherCluster)} qui renvoie la distance entre deux clusters. Le plus simple est sans doute de choisir la moyenne des différences des notes entre toutes les combinaisons d'étudiants du cluster courant et de \texttt{anotherCluster}.
+\end{etape}
+
+\begin{etape}
+ Dans le \texttt{main(...)} de \texttt{ClusterOfStudents}, créez les clusters simples \texttt{loulouCluster} et \texttt{donaldCluster} et vérifiez que les distances entre \texttt{geoCluster}, \texttt{loulouCluster} et \texttt{donaldCluster} correspondent à ce que vous attendez (pensez à vérifier les six combinaisons).
+\end{etape}
+
+\begin{etape}
+ Dans le \texttt{main(...)} de \texttt{ClusterOfStudents}, créez le cluster complexe \texttt{geoLoulouCluster} et vérifiez que sa distance avec \texttt{donaldCluster} correspond à ce que vous attendez. Vérifiez également la distance entre \texttt{donaldCluster} et \texttt{geoLoulouCluster}.
+\end{etape}
+
+\begin{etape}
+ Ajoutez la méthode \texttt{clusterizeAgglomerative()}. Clusterisez \texttt{bigCluster} et affichez le résultat au format Newick.
+\end{etape}
+
+La figure~\ref{fig:dendrogramClusterized-m1big} montre le résultat de la classification pour un ensemble d'étudiants.
+Observez que puisque toutes les branches ont une longueur constante, on a l'impression de distinguer deux clusters principaux.
+La figure~\ref{fig:dendrogramClusterized-m1bigBranchLength} montre qu'en rendant la longueur des branches proportionnelle à la distance séparant les deux clusters que l'on fusionne, ce sont en fait trois clusters principaux qui apparaissent (voir section~\ref{sec:ameliorationDendrogramme}).
+
+\begin{figure}[ht]
+ \centering
+ %\includegraphics[width=60mm]{figures/dendrogram-grades-m1big.png}
+ \includegraphics[width=120mm]{figures/dendrogram-grades-m1big.pdf}
+ \caption{Cluster complexe après clustering.}
+ \label{fig:dendrogramClusterized-m1big}
+\end{figure}
+
+
+\begin{figure}[ht]
+ \centering
+ %\includegraphics[width=60mm]{figures/dendrogram-grades-branchLength.png}
+ \includegraphics[width=120mm]{figures/dendrogram-grades-branchLength.pdf}
+ \caption{Cluster complexe après clustering. La longueur des branches est proportionnelle à la distance séparant les deux clusters fusionnés.}
+ \label{fig:dendrogramClusterized-m1bigBranchLength}
+\end{figure}
+
+
+\section{Extensions facultatives}
+
+\subsection{Amélioration du dendrogramme}
+\label{sec:ameliorationDendrogramme}
+
+Le format Newick permet d'indiquer la longueur de chacun des branches.
+Utilisez plutôt l'application FigTree\footnoteURL{http://tree.bio.ed.ac.uk/software/figtree/} ou le site de Tree Viewer\footnoteURL{http://www.proweb.org/treeviewer/} pour la visualisation, les autres outils semblent avoir des problèmes.
+
+\begin{etape}
+ Améliorez la méthode \texttt{getNewick()} pour que toutes les feuilles soient au même niveau.
+\end{etape}
+
+\begin{etape}
+ Améliorez la méthode \texttt{getNewick()} pour que toutes les feuilles soient au même niveau et que la longueur des branche soit proportionnelle à l'écart des notes.
+\end{etape}
+
+
+
+\subsection{Approche divisive}
+
+\begin{etape}
+ Ajoutez une méthode \texttt{clusterizeDivisive()} à la classe \texttt{ClusterOfStudents}. Clusterisez \texttt{bigCluster} et comparez avec l'approche ascendante.
+\end{etape}
+
+
+\subsection{Modélisation de \texttt{ClusterOfStudents}}
+
+Dans la classe \texttt{ClusterOfStudents}, chaque instance d'étudiant apparaît deux fois~:
+\begin{itemize}
+ \item dans l'attribut \texttt{subClusters} puisque le dendrogramme a autant de sous-clusters feuilles que d'étudiants~;
+ \item dans l'attribut \texttt{students} qui permet un parcours plus simple de la liste des étudiants d'un cluster en évitant de devoir parcourir récursivement tout le dendrogramme à chaque fois.
+\end{itemize}
+
+On pourrait penser que cela occupe donc deux fois plus de place en mémoire que nécessaire, même si dans notre cas ce surcoût est acceptable dans la mesure où chaque instance occupe peu de place mémoire et qu'il y a relativement peu d'étudiants.
+Néanmoins, Java ne duplique évidemment pas les instances de \texttt{Student} dans les deux attributs. 
+Chaque attribut ne contient en fait que les adresses des instances de \texttt{Student} (on appelle ça un \emph{passage d'objet par référence}).
+Ainsi, si vous modifiez la note d'un étudiant dans \texttt{students}, cette modification apparaîtra également dans \texttt{subClusters}, et inversement.
+
+Au final, le fait d'utiliser deux attributs qui semblent redondants parce qu'ils contiennent les mêmes objets~:
+\begin{itemize}
+ \item a l'avantage principal d'améliorer le temps de traitement en évitant un parcours de l'arborescence du dendrogramme chaque fois que l'on souhaite parcourir les étudiants (et cela arrive souvent durant l'étape de clustering)~;
+ \item a l'avantage secondaire de simplifier l'écriture de la classe en vous dispensant justement d'écrire la fonction de parcours de l'arborescence du dendrogramme~;
+ \item a l'inconvénient d'augmenter légèrement la consommation de la mémoire.
+\end{itemize}
+
+\begin{etape}
+ Écrivez une classe \texttt{ClusterOfStudentsBis} qui ne contient que l'attribut \texttt{subClusters}. Comparez les temps de clusterisation de \texttt{ClusterOfStudents} et de \texttt{ClusterOfStudentsBis}.
+\end{etape}
+
+ 
+
+\end{document}
+

@@ -36,9 +36,14 @@
 %\usepackage{aeguill}
 %\usepackage{eurosym}
 
-\usepackage{color}
+\usepackage{xcolor}
 \newcommand{\fixme}[1]{\textcolor{red}{\textbf{FIXME}: #1}}
 \newcommand{\todo}[1]{\textcolor{blue}{\textbf{TODO}: #1}}
+
+\usepackage{minted}	% syntax-highlighting for code
+\definecolor{codebg}{rgb}{0.96,0.96,0.96}
+%\definecolor{ForestGreen}{rgb}{0.13,0.54,0.13}
+\definecolor{ForestGreen}{rgb}{0. 0.5 0.}
 
 
 %\newtheorem{definition}{Définition}
@@ -228,17 +233,24 @@ This project's goal is to classify a set of students according to their grades, 
 
 
 \begin{etape}
- Dans le \texttt{main(...)}, créez les instances suivantes et vérifiez que les méthodes de l'étape~\ref{etape:studentMethods} fonctionnent correctement~:
+ In the \texttt{main(...)} method, create the following instances and check that the methods from step~\ref{etape:studentMethods} still work correctly:
 \end{etape}
 
-\begin{listing}{1}
+% \begin{listing}{1}
+% Student riri = new Student("riri", 12.5);
+% Student fifi = new Student("fifi", 14.0);
+% Student loulou = new Student("loulou", 18.5);
+% Student geo = new Student("geo", 19.5);
+% Student donald = new Student("donald", 10.5);
+% \end{listing}
+
+\begin{minted}[frame=lines,bgcolor=codebg,linenos]{java}
 Student riri = new Student("riri", 12.5);
 Student fifi = new Student("fifi", 14.0);
 Student loulou = new Student("loulou", 18.5);
 Student geo = new Student("geo", 19.5);
 Student donald = new Student("donald", 10.5);
-\end{listing}
-
+\end{minted}
 
 
 \subsection{Classe \texttt{Promo}~: héritage et méthodes statiques}

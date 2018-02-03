@@ -253,16 +253,16 @@ Student donald = new Student("donald", 10.5);
 \end{minted}
 
 
-\subsection{Classe \texttt{Promo}~: héritage et méthodes statiques}
+\subsection{Class \texttt{Promo}: inheritance and static methods}
 
 
 \begin{etape}
- Créez une classe \texttt{Promo} qui représente une promotion d'étudiants. \texttt{Promo} est une sous-classe de \texttt{java.util.ArrayList}\footnoteURL{http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html}. Profitez-en pour lire la documentation de \texttt{ArrayList}, vous allez bientôt en avoir besoin.
-Puisque \texttt{ArrayList} est une classe générique alors que tous les éléments de \texttt{Promo} sont des instances de \texttt{Student}, il faut en fait dire que \texttt{Promo} est une sous-classe de \texttt{ArrayList<Student>}. 
+ Create a class \texttt{Promo} that represents a set of students. \texttt{Promo} is a sub-class of \texttt{java.util.ArrayList}\footnoteURL{http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html}. Make sure to read the documentation for \texttt{ArrayList}, you will need it soon.
+Please note that \texttt{ArrayList} is a generic class, whereas all the elements of a \texttt{Promo} instance are composed of instances of \texttt{Student}, so you will need to state that \texttt{Promo} is a subclass of \texttt{ArrayList<Student>}. 
 \end{etape}
 
 \begin{etape}
- Dans le \texttt{main(...)} de \texttt{Promo}, créez une instance \texttt{m1big} de \texttt{Promo}, et ajoutez-y \texttt{riri}, \texttt{fifi}, \texttt{geo}, \texttt{donald} et \texttt{loulou} (respectez cet ordre afin que les notes les plus hautes et les plus basses soient au milieu de la liste lors de l'étape suivante puis du clustering).
+ In the \texttt{Promo}'s \texttt{main(...)} method, create an instance \texttt{m1bioinfo} of  \texttt{Promo}, and add the members \texttt{riri}, \texttt{fifi}, \texttt{geo}, \texttt{donald} and \texttt{loulou} (respect this order so that the highest and lowest grades are in the middle of the list. The idea here is to avoid having the students almost sorted for the clustering).
 \end{etape}
 
 \begin{etape}

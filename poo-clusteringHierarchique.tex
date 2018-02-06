@@ -1,6 +1,6 @@
 \documentclass[a4paper,10pt]{article}
 
-\newcommand{\currentVersion}{1.3}
+\newcommand{\currentVersion}{1.4}
 
 
 %%% MARGES
@@ -181,7 +181,7 @@
 
 
 %opening
-\title{Master~1 Bioinformatique\\~\\\textbf{Object-oriented programming}}
+\title{Master~1 Bioinformatique\\~\\\textbf{Object-oriented programming}\\~\\Hierarchical clustering}
 \author{Olivier Dameron\\ \texttt{olivier.dameron@univ-rennes1.fr}}
 
 \begin{document}
@@ -204,7 +204,7 @@ This project's goal is to classify a set of students according to their grades, 
 
 \begin{figure}[ht]
  \centering
- \includegraphics[width=60mm]{./images/xkcd_867_dendrograms.png}
+ \includegraphics[width=80mm]{./images/xkcd_867_dendrograms.png}
  \caption{xkcd 867 (\texttt{http://xkcd.com/867/})}
  \label{fig:xkcd867}
 \end{figure}
@@ -285,24 +285,26 @@ Feel glad to have declared \texttt{Promo} as a subclass of \texttt{ArrayList}.
 
 
 
-\section{Clustering hiérarchique}
+\section{Hierarchical clustering}
 \label{sec:clustering}
 
-\subsection{Principe}
+\subsection{Principle}
 \label{sec:clusteringPrincipes}
 
-\subsubsection{Approches agglomérative et divisive}
+\subsubsection{Agglomerative vs. divisive approaches}
 
-La classification consiste à organiser des éléments en groupes basés sur leurs similarités ou leurs différences.
+\textbf{Classifying} consists in organizing a set of elements in groups based on the elements' similarities or differences.
 
-Le clustering hiérarchique consiste à organiser ces éléments en sous-groupes imbriqués les uns dans les autres de façon arborescente.
-Il y a deux façon de procéder~:
+\textbf{Hierarchical clustering} consists in organizing the sets of elements into subsets included in to each others in a tree-like structure.
+There are two main approaches for determining this organization:
 \begin{itemize}
- \item l'approche agglomérative (aussi appelée ascendante) commence par créer un cluster par élément, puis crée successivement un nouveau cluster regroupant les deux clusters les plus similaires jusqu'à ce qu'il ne reste plus qu'un seul cluster~;
- \item l'approche divisive (aussi appelée descendante) commence par rassembler tous les éléments dans un seul cluster puis à le décomposer successivement en sous-clusters jusqu'à ce que tous les clusters ne soient plus constitués que d'un seul élément.
+ \item the \textbf{agglomerative approach} (also called ascending) starts by creating one (atomic) cluster for each element, and then iteratively generates new clusters composed of the most similar two, until there only remains one cluster;
+ \item the \textbf{divisive approach} (also called descending) starts by gathering all the elements into a single cluster, and then iteratively decompose the clusters into subclusters until each of them is only composed of a single element.
 \end{itemize}
 
-L'approche divisive nécessite plus d'opérations que l'approche agglomérative et est donc plus longue... sauf si on n'a besoin que des clusters de plus haut niveaux (par exemple pour séparer un échantillon en deux groupes).
+The divisive approach requires more operations than the agglomerative one and is therefore longer... except when we only need the most general clusters (e.g. to separate a sample into two groups).
+
+
 
 
 \subsubsection{Mesures de distance entre éléments et entre clusters}

@@ -307,12 +307,13 @@ The divisive approach requires more operations than the agglomerative one and is
 
 
 
-\subsubsection{Mesures de distance entre éléments et entre clusters}
+\subsubsection{Distance measures between elements and between clusters}
 
-Pour l'approche agglomérative comme pour l'approche divisive, le clustering dépend de deux paramètres principaux~:
+For both the agglomerative and ther divisive approaches, clustering depends on two main parameters:
+
 \begin{itemize}
- \item une \textbf{mesure de distance entre éléments} (appelée simplement \emph{distance}). Il en existe plusieurs classiques~: la distance euclidienne, la distance de Manhattan... Dans notre cas, on considérera que la distance entre deux étudiants est la valeur absolue de la différence de leurs notes~;
- \item une \textbf{mesure de distance entre clusters} (appelée \emph{linkage}), qui utilise la distance entre les éléments des deux clusters. Là encore il en existe plusieurs classiques~: la moyenne des distances de toutes les combinaisons d'éléments, le maximum, le minimum... Dans notre cas, on considérera que la distance entre deux clusters d'étudiants est la moyenne des distances entre tous les éléments du premier cluster et tous les éléments du second cluster.
+ \item a \textbf{distance measure between elements} (also simply called \emph{distance}). There are several classical ones: euclidian distance, Manhattan distance... In our case, we will consider that the distance between two students is the absolute value of the difference of their grades;
+ \item a \textbf{distance measure between clusters} (also called \emph{linkage}) that relies on the \emph{distance} between elements of the two clusters. There are several classical linkage measures: the average of the distances between all the combinations of elements, their maximum, their minimum... In our case, we will consider that the distance between two clusters of students is the average of the distances between all the elements of the first cluster and all the elements of the second cluster.
 \end{itemize}
 
 

@@ -349,20 +349,26 @@ After clustering, a complex cluster is composed of sub-clusters that are interme
 \end{figure}
 
 
-\subsubsection{Initialisation}
+\subsubsection{Initialization}
 \label{sec:clusterInitialisation}
 
 \begin{etape}
- Créez la classe \texttt{ClusterOfStudents} avec un attribut \texttt{subclusters} qui représente la liste des sous-clusters. Pour simplifier l'étape de clustering où il est nécessaire de parcourir la liste des étudiants composant un cluster, on ajoute l'attribut \texttt{students} qui représente la liste des étudiants constituant les feuilles du cluster.
+ Create a \texttt{ClusterOfStudents} with a \texttt{subclusters} attribute that represents the list of its sub-clusters. 
+ For simplifying the clustering step (when marshalling the students composing the cluster), add an attribute \texttt{students} that represents the set of students constituting the leaves of the cluster.
 \end{etape}
 
 \begin{etape}
- Ajoutez un constructeur par défaut \texttt{ClusterOfStudents()} qui crée un cluster vide (on ne devrait pas en avoir besoin, mais c'est plus propre), un constructeur \texttt{ClusterOfStudents(Student aStudent)} qui crée un cluster simple, et un constructeur \texttt{ClusterOfStudents(Promo aPromo)} qui crée un cluster complexe dans l'état initial.
+ Add the following constructors:
+ \begin{itemize}
+  \item a default constructor \texttt{ClusterOfStudents()} that creates an empty cluster (we do not reaaly need it, but I find it cleaner to have a default constructor);
+  \item a constructor for simple clusters \texttt{ClusterOfStudents(Student aStudent)};
+  \item a constructor for complex clusters before clustering \texttt{ClusterOfStudents(Promo aPromo)}.
+ \end{itemize}
 \end{etape}
 
 \begin{etape}
 \label{etape:clusterInitialisationM1big}
- Dans le \texttt{main(...)} de \texttt{ClusterOfStudents}, créez une instance de cluster simple \texttt{geoCluster} initialisée avec \texttt{geo}, et une instance de cluster complexe \texttt{bigCluster} initialisée avec \texttt{m1big}.
+ In \texttt{ClusterOfStudents}' \texttt{main(...)} main method, create an instance of a simple cluster \texttt{geoCluster} initialized with \texttt{geo}, and an instance of complex cluster \texttt{bigCluster} initialized with \texttt{m1bioinfo}.
 \end{etape}
 
 

@@ -320,21 +320,21 @@ For both the agglomerative and ther divisive approaches, clustering depends on t
 
 \subsection{Classe \texttt{ClusterOfStudents}}
 
+This section aims at implementing the \texttt{ClusterOfStudents} class for representing a cluster of \texttt{Student} instances.
+A simple cluster is composed of a single instance of  \texttt{Student}.
+A complex cluster is composed of several sub-clusters which can themselves be either simple or complex clusters.
+A complex cluster has a tree-like structure where all the leaves are simple clusters.
 
+Initially, a complex cluster is only composed of simple clusters (Fig.~\ref{fig:dendrogramFlat}).
+After clustering, a complex cluster is composed of sub-clusters that are intermediate complex clusters (Fig.~\ref{fig:dendrogramClusterized})
 
-Le but de cette section est de mettre en {\oe}uvre la classe \texttt{ClusterOfStudents} qui représente un cluster d'instances de la classe \texttt{Student}. 
-Un cluster simple n'est constitué que d'une seule instance de \texttt{Student}.
-Un cluster complexe est constitué de plusieurs sous-clusters qui peuvent être chacun des clusters simples ou des clusters complexes.
-Un cluster complexe a donc une structure d'arbre dont les feuilles sont toujours des clusters simples.
-À l'état initial, un cluster complexe est constitué uniquement de clusters simples (Fig.~\ref{fig:dendrogramFlat}).
-Après clustering, un cluster complexe est constitué de sous-clusters qui peuvent être des clusters complexes intermédiaires (Fig.~\ref{fig:dendrogramClusterized})
 
 
 \begin{figure}[ht]
  \centering
  %\includegraphics[width=60mm]{figures/dendrogram-grades-flat.png}
  \includegraphics[width=60mm]{images/dendrogram-grades-flat.pdf}
- \caption{Cluster complexe dans l'état initial~: il est composé de cinq sous-clusters simples, composés chacun d'un étudiant.}
+ \caption{Complex cluster in its initial state: it is composed of five simple sub-clusters, each composed of a student.}
  \label{fig:dendrogramFlat}
 \end{figure}
 
@@ -343,7 +343,7 @@ Après clustering, un cluster complexe est constitué de sous-clusters qui peuvent
  \centering
  %\includegraphics[width=60mm]{figures/dendrogram-grades-clusterized.png}
  \includegraphics[width=60mm]{images/dendrogram-grades-clusterized.pdf}
- \caption{Cluster complexe après clustering. Il est composé de deux sous-clusters complexes. Le premier est à son tour composé de deux sous-clusters simples (geo et loulou). Le second est composé d'un sous-cluster simple (donald) et d'un sous-cluster complexe composé de deux sous-clusters simples (riri et fifi).}
+ \caption{Complex cluster after clustering. It is composed of two intermediate complex sub-clusters. The firt is itself composed of two simple clusters (geo and loulou). The second is composed of a smple sub-cluster (donald) and a complex sub-cluster composed of two simple sub-clusters (riri and fifi).}
  \label{fig:dendrogramClusterized}
 \end{figure}
 

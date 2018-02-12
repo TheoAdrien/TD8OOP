@@ -368,30 +368,32 @@ After clustering, a complex cluster is composed of sub-clusters that are interme
 
 \begin{etape}
 \label{etape:clusterInitialisationM1big}
- In \texttt{ClusterOfStudents}' \texttt{main(...)} main method, create an instance of a simple cluster \texttt{geoCluster} initialized with \texttt{geo}, and an instance of complex cluster \texttt{bigCluster} initialized with \texttt{m1bioinfo}.
+ In \texttt{ClusterOfStudents}' \texttt{main(...)} main method, create an instance of a simple cluster \texttt{geoCluster} initialized with \texttt{geo}, and an instance of complex cluster \texttt{bioCluster} initialized with \texttt{m1bioinfo}.
 \end{etape}
 
 
 
 
-\subsubsection{Visualisation}
+\subsubsection{Visualization}
 \label{sec:visualisation}
 
-Le format Newick\footnoteURL{http://evolution.genetics.washington.edu/phylip/newicktree.html} permet une représentation simple des arbres et des dendrogrammes, qui est compris par de nombreux outils de visualisation.
-Vous pourrez par exemple utiliser le serveur web Tree Viewer\footnoteURL{http://www.proweb.org/treeviewer/} ou T-REX\footnoteURL{http://www.trex.uqam.ca/} ou les programmes FigTree\footnoteURL{http://tree.bio.ed.ac.uk/software/figtree/} dendroscope\footnoteURL{http://ab.inf.uni-tuebingen.de/software/dendroscope/} (utilisation académique libre, il n'est pas nécessaire d'obtenir une licence pour les fonctions de base).
-FigTree est celui qui semble donner les meilleurs résultats.
+The Newick format\footnoteURL{http://evolution.genetics.washington.edu/phylip/newicktree.html} provides a straightforward representation of trees and dendrograms, and is supported by most visualization tools.
+You can use the Tree Viewer web server\footnoteURL{http://www.proweb.org/treeviewer/} or T-REX\footnoteURL{http://www.trex.uqam.ca/} or the dedicated softwares FigTree\footnoteURL{http://tree.bio.ed.ac.uk/software/figtree/}, dendroscope\footnoteURL{http://ab.inf.uni-tuebingen.de/software/dendroscope/} (free use in an academic context; getting a licence is not required for the basic functions).
+FigTree seems to give the best results.
 
-Le dendrogramme de la figure~\ref{fig:dendrogramFlat} peut être représenté par\\ \texttt{(riri,fifi,loulou,geo,donald);}\\ et celui de la figure~\ref{fig:dendrogramClusterized} par\\ \texttt{((loulou,geo),(donald,(riri,fifi)));}.
+The dendrogram from Fig.~\ref{fig:dendrogramFlat} can be represented by\\ \texttt{((loulou,geo),(donald,(riri,fifi)));}.
 
-NB~: pour la visualisation, on aurait aussi pu utiliser les fonctions de R via le binding Java--R, mais c'est plus compliqué, et puis l'exercice de générer des fichiers au format Newick était intéressant.
+NB~: for visualizing dendrograms, we could as well have used the R functions via the Java--R binding, but it is more complicated, and writting Newick files makes for an interesting exercice anyway.
 
 \begin{etape}
- Ajoutez une méthode \texttt{getNewick()} qui renvoie une chaîne de caractères représentant le dendrogramme au format Newick.
-À cause du point-virgule final, vous aurez peut-être besoin d'introduire une fonction intermédiaire \texttt{getNewickIntermediate()}. Puisqu'il s'agit d'un parcours d'arbre, vous vous simplifierez la vie en adoptant une approche récursive. Quelle devra être la visibilité de ces méthodes (publique, protégée, privée)~?
+ Add a \texttt{getNewick()} method to the class \texttt{ClusterOfStudents} that returns a string representing the dendrogram in the Newick format.
+ Because of the final semicolon, you may need to introduce an intermediate function (aptly named \texttt{getNewickIntermediate()}). 
+ For marshalling the tree, you will make your life easier by considering a recursive approach (but this is not mandatory).
+ Should these methods' visibility be public, protected or private?
 \end{etape}
 
 \begin{etape}
- Générez la représentation de \texttt{bigCluster} au format Newick et vérifiez (par exemple avec T-REX ou dendroscope) qui vous obtenez quelque chose de similaire à la figure~\ref{fig:dendrogramFlat}.
+ Generate a Newick representation of \texttt{bioCluster} and check (for example with T-REX or dendroscope) whether you get something similar to Fig.~\ref{fig:dendrogramFlat}.
 \end{etape}
 
 

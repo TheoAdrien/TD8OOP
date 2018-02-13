@@ -51,7 +51,6 @@ public class GroupOfStudentsLoader {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		GroupOfStudents m1bio = GroupOfStudentsLoader.loadTsvFile("/path/to/grades_anonymized.tsv");
 		
 		System.out.println("Grade min: " + m1bio.getMinGrade());

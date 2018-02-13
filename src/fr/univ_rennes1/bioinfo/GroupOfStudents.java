@@ -2,45 +2,29 @@ package fr.univ_rennes1.bioinfo;
 
 import java.util.Vector;
 
-/**
- * 
- */
 
 /**
- * @author olivier
+ * @author Olivier Dameron
  *
  */
 public class GroupOfStudents extends Vector<Student> {
 	
 	public double getMinGrade() {
-		double minGrade = 20.;
-		for (Student currentStudent : this) {
-			minGrade = Math.min(minGrade, currentStudent.getGrade());
-		}
-		return minGrade;
+		// TODO: DO SOMETHING HERE and uncomment the method call in the main(...)
 	}
 	
 	public double getMaxGrade() {
-		double maxGrade = 0.;
-		for (Student currentStudent : this) {
-			maxGrade = Math.max(maxGrade, currentStudent.getGrade());
-		}
-		return maxGrade;
+		// TODO: DO SOMETHING HERE and uncomment the method call in the main(...)
 	}
 	
 	public double getAverageGrade() {
-		double average = 0.;
-		for (Student currentStudent : this) {
-			average += currentStudent.getGrade();
-		}
-		return average / this.size();
+		// TODO: DO SOMETHING HERE and uncomment the method call in the main(...)
 	}
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Student riri = new Student("riri", 12.5);
 		Student fifi = new Student("fifi", 14.0);
 		Student geo = new Student("geo", 19.5);
@@ -54,10 +38,10 @@ public class GroupOfStudents extends Vector<Student> {
 		m1bio.add(geo);
 		m1bio.add(donald);
 		
+		// TODO: uncomment when needed
 		System.out.println("Grade min: " + m1bio.getMinGrade());
 		System.out.println("Grade max: " + m1bio.getMaxGrade());
 		System.out.println("Average: " + m1bio.getAverageGrade());
-
 	}
 
 }

@@ -2,13 +2,9 @@ package fr.univ_rennes1.bioinfo;
 
 
 /**
- * 
- */
-
-/**
  * Simple student with an unique identifier and a grade.
  * 
- * @author olivier
+ * @author Olivier Dameron
  *
  */
 public class Student {
@@ -23,24 +19,23 @@ public class Student {
 	 * @param grade
 	 */
 	public Student(String identifier, double grade) {
-		this.ident = identifier;
-		this.grade = grade;
+		// TODO: DO SOMETHING HERE
 	}
 	
 	public Student(String identifier) {
-		this(identifier, 10.0);
+		// TODO: DO SOMETHING HERE
 	}
 	
 	public String getIdentifier() {
-		return this.ident;
+		// TODO: DO SOMETHING HERE
 	}
 	
 	public double getGrade() {
-		return this.grade;
+		// TODO: DO SOMETHING HERE
 	}
 	
 	public void setGrade(double newGrade) {
-		this.grade = newGrade;
+		// TODO: DO SOMETHING HERE
 	}
 	
 
@@ -48,13 +43,11 @@ public class Student {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Student riri = new Student("riri", 12.5);
 		Student fifi = new Student("fifi", 14.0);
 		Student loulou = new Student("loulou", 18.5);
 		Student geo = new Student("geo", 19.5);
 		Student donald = new Student("donald", 10.5);
-
 	}
 
 }

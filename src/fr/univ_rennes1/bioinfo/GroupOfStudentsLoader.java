@@ -1,3 +1,5 @@
+package fr.univ_rennes1.bioinfo;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;

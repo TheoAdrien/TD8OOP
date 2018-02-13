@@ -1,3 +1,6 @@
+package fr.univ_rennes1.bioinfo;
+
+
 /**
  * 
  */

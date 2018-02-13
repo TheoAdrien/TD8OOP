@@ -1,3 +1,5 @@
+package fr.univ_rennes1.bioinfo;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;

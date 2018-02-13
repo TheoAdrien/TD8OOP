@@ -212,7 +212,9 @@ This project's goal is to classify a set of students according to their grades, 
 
 
 
-\section{Cloning the project}
+\section{Set up your environment}
+
+\subsection{Cloning the project}
 
 The project's description, the Java source files and some example datasets can be retrieved from its git repository\footnoteURL{https://gitlab.com/odameron/javaHierarchicalClustering}.
 
@@ -226,9 +228,15 @@ The project's description, the Java source files and some example datasets can b
   \item clone te project with \texttt{git clone <gitURL>} (you have to retrieve \texttt{gitURL} from the web page);
   \item create you own branch with \texttt{git branch -b devLastnameFirstname} (obviously, adapt Lastname and Firstname). Reminder: you might want to read the section on branches from a git tutorial\footnoteURL{https://bioinfo-fr.net/git-usage-collaboratif}
 \end{enumerate}
-From there, you are strongly encouraged to use git profusely and commit at least at each step.
+From now on, you are strongly encouraged to use git profusely and commit at least at each step.
 \end{etape}
 
+
+\subsection{Configure your editor}
+
+\fixme{instructions for importing in Eclipse or writing an ant file}
+
+\fixme{instructions for runing javadoc in the \texttt{doc} directory}
 
 
 \section{Representing a class of students}
@@ -273,6 +281,12 @@ Student donald = new Student("donald", 10.5);
 \end{minted}
 
 
+\begin{etape}
+ \fixme{run javadoc and commit}
+\end{etape}
+
+
+
 \subsection{Class \texttt{StudentGroup}: inheritance and static methods}
 
 
@@ -302,6 +316,9 @@ Feel glad to have declared \texttt{StudentGroup} as a subclass of \texttt{ArrayL
  Draw the parallel with the methods \texttt{min(...)}, \texttt{max(...)} and \texttt{abs(...)} from \texttt{java.lang.Math}.
 \end{etape}
 
+\begin{etape}
+ \fixme{run javadoc and commit}
+\end{etape}
 
 
 
@@ -390,7 +407,9 @@ After clustering, a complex cluster is composed of sub-clusters that are interme
  In \texttt{ClusterOfStudents}' \texttt{main(...)} main method, create an instance of a simple cluster \texttt{geoCluster} initialized with \texttt{geo}, and an instance of complex cluster \texttt{bioCluster} initialized with \texttt{m1bioinfo}.
 \end{etape}
 
-
+\begin{etape}
+ \fixme{run javadoc and commit}
+\end{etape}
 
 
 \subsubsection{Visualization}
@@ -415,6 +434,9 @@ NB~: for visualizing dendrograms, we could as well have used the R functions via
  Generate a Newick representation of \texttt{bioCluster} and check (for example with T-REX or dendroscope) whether you get something similar to Fig.~\ref{fig:dendrogramFlat}.
 \end{etape}
 
+\begin{etape}
+ \fixme{run javadoc and commit}
+\end{etape}
 
 
 
@@ -437,6 +459,11 @@ In \texttt{ClusterOfStudents}'s \texttt{main(...)} method, create the complex cl
  Add a method  \texttt{clusterizeAgglomerative()}.
  Perform clustering on \texttt{bigCluster} and display the result as a Newick string.
 \end{etape}
+
+\begin{etape}
+ \fixme{run javadoc and commit}
+\end{etape}
+
 
 Figure~\ref{fig:dendrogramClusterized-m1big} shows the classification result for a set of students.
 Notice that because all the branches have the same length, the dendrogram seems to display two main clusters.

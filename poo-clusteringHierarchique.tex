@@ -314,7 +314,7 @@ Feel glad to have declared \texttt{StudentGroup} as a subclass of \texttt{ArrayL
 \end{etape}
 
 \begin{etape}
- The \texttt{StudentGroupLoader} class (\fixme{fournie sur l'ENT}) has a method \texttt{loadTsvFile(...)} that takes as argument a text file (one student per line; its identifier, a tabulation, its grade) for creating an instance of \texttt{StudentGroup}. Why is the method \texttt{loadTsvFile(...)} declared as ``\texttt{static}''? 
+ The \texttt{StudentGroupLoader} class (provided in the \texttt{src} directory) has a method \texttt{loadTsvFile(...)} that takes as argument a text file (one student per line; its identifier, a tabulation, its grade) for creating an instance of \texttt{StudentGroup}. Why is the method \texttt{loadTsvFile(...)} declared as ``\texttt{static}''? 
  Draw the parallel with the methods \texttt{min(...)}, \texttt{max(...)} and \texttt{abs(...)} from \texttt{java.lang.Math}.
 \end{etape}
 
@@ -494,15 +494,16 @@ Figure~\ref{fig:dendrogramClusterized-m1bigBranchLength} shows that by making th
 \subsection{Dendrogram improvement}
 \label{sec:ameliorationDendrogramme}
 
-Le format Newick permet d'indiquer la longueur de chacun des branches.
-Utilisez plutôt l'application FigTree\footnoteURL{http://tree.bio.ed.ac.uk/software/figtree/} ou le site de Tree Viewer\footnoteURL{http://www.proweb.org/treeviewer/} pour la visualisation, les autres outils semblent avoir des problèmes.
+The Newick format allows to specify the branches' length.
+For visualizing the result, not all the tools mentionned previously support this feature. 
+Rather use FigTree\footnoteURL{http://tree.bio.ed.ac.uk/software/figtree/} or the Tree Viewer\footnoteURL{http://www.proweb.org/treeviewer/} website.
 
 \begin{etape}
- Améliorez la méthode \texttt{getNewick()} pour que toutes les feuilles soient au même niveau.
+ Improve the \texttt{getNewick()} method so that all the leaves are at the same level (i.e. aligned on the right, contrary to Fig.~\ref{fig:dendrogramClusterized-m1big}).
 \end{etape}
 
 \begin{etape}
- Améliorez la méthode \texttt{getNewick()} pour que toutes les feuilles soient au même niveau et que la longueur des branche soit proportionnelle à l'écart des notes.
+ Improve the \texttt{getNewick()} method so that all the leaves are at the same level and the branches' length are proportional to the (absolute value of) the difference between the grades.
 \end{etape}
 
 

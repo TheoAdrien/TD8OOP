@@ -3,4 +3,5 @@
 *.out
 *.synctex.gz
 _minted*
+solution*
 

@@ -402,30 +402,32 @@ NB~: for visualizing dendrograms, we could as well have used the R functions via
 \subsubsection{Clustering}
 
 \begin{etape}
- Ajoutez une méthode \texttt{linkage(ClusterOfStudents anotherCluster)} qui renvoie la distance entre deux clusters. Le plus simple est sans doute de choisir la moyenne des différences des notes entre toutes les combinaisons d'étudiants du cluster courant et de \texttt{anotherCluster}.
+ Add a method \texttt{linkage(ClusterOfStudents anotherCluster)} that returns the distance between the current cluster and \texttt{anotherCluster}. 
+ Choosing the average of the absolute value of the grade differences for each combination of students from each cluster is probably the easiest solution.
 \end{etape}
 
 \begin{etape}
- Dans le \texttt{main(...)} de \texttt{ClusterOfStudents}, créez les clusters simples \texttt{loulouCluster} et \texttt{donaldCluster} et vérifiez que les distances entre \texttt{geoCluster}, \texttt{loulouCluster} et \texttt{donaldCluster} correspondent à ce que vous attendez (pensez à vérifier les six combinaisons).
+ In \texttt{ClusterOfStudents}'s \texttt{main(...)} method, create two simple clusters \texttt{loulouCluster} and \texttt{donaldCluster} and check whether the distance between \texttt{geoCluster}, \texttt{loulouCluster} and \texttt{donaldCluster} are what you expect them to be (check the six combinations).
 \end{etape}
 
 \begin{etape}
- Dans le \texttt{main(...)} de \texttt{ClusterOfStudents}, créez le cluster complexe \texttt{geoLoulouCluster} et vérifiez que sa distance avec \texttt{donaldCluster} correspond à ce que vous attendez. Vérifiez également la distance entre \texttt{donaldCluster} et \texttt{geoLoulouCluster}.
+In \texttt{ClusterOfStudents}'s \texttt{main(...)} method, create the complex cluster  \texttt{geoLoulouCluster} and check whether its distance with \texttt{donaldCluster} and \texttt{geoLoulouCluster} (and conversely).
 \end{etape}
 
 \begin{etape}
- Ajoutez la méthode \texttt{clusterizeAgglomerative()}. Clusterisez \texttt{bigCluster} et affichez le résultat au format Newick.
+ Add a method  \texttt{clusterizeAgglomerative()}.
+ Perform clustering on \texttt{bigCluster} and display the result as a Newick string.
 \end{etape}
 
-La figure~\ref{fig:dendrogramClusterized-m1big} montre le résultat de la classification pour un ensemble d'étudiants.
-Observez que puisque toutes les branches ont une longueur constante, on a l'impression de distinguer deux clusters principaux.
-La figure~\ref{fig:dendrogramClusterized-m1bigBranchLength} montre qu'en rendant la longueur des branches proportionnelle à la distance séparant les deux clusters que l'on fusionne, ce sont en fait trois clusters principaux qui apparaissent (voir section~\ref{sec:ameliorationDendrogramme}).
+Figure~\ref{fig:dendrogramClusterized-m1big} shows the classification result for a set of students.
+Notice that because all the branches have the same length, the dendrogram seems to display two main clusters.
+Figure~\ref{fig:dendrogramClusterized-m1bigBranchLength} shows that by making the length of each branch proportional to the distance separating the two clusters it joins, the dendrogram reveals three main clusters (cf. section~\ref{sec:ameliorationDendrogramme}).
 
 \begin{figure}[ht]
  \centering
  %\includegraphics[width=60mm]{figures/dendrogram-grades-m1big.png}
  \includegraphics[width=120mm]{images/dendrogram-grades-m1big.pdf}
- \caption{Cluster complexe après clustering.}
+ \caption{Complex cluster after clustering. The length of each branch is constant.}
  \label{fig:dendrogramClusterized-m1big}
 \end{figure}
 
@@ -434,7 +436,7 @@ La figure~\ref{fig:dendrogramClusterized-m1bigBranchLength} montre qu'en rendant
  \centering
  %\includegraphics[width=60mm]{figures/dendrogram-grades-branchLength.png}
  \includegraphics[width=120mm]{images/dendrogram-grades-branchLength.pdf}
- \caption{Cluster complexe après clustering. La longueur des branches est proportionnelle à la distance séparant les deux clusters fusionnés.}
+ \caption{Complex cluster after clustering. The length of each branch is proportional to the distance between the two clusters it unites.}
  \label{fig:dendrogramClusterized-m1bigBranchLength}
 \end{figure}
 

@@ -212,6 +212,25 @@ This project's goal is to classify a set of students according to their grades, 
 
 
 
+\section{Cloning the project}
+
+The project's description, the Java source files and some example datasets can be retrieved from its git repository\footnoteURL{https://gitlab.com/odameron/javaHierarchicalClustering}.
+
+\fixme{We should definitely do a fork instead}
+
+\begin{etape}
+ Set your working environment up:
+ \begin{enumerate}
+  \item create an empty local directory;
+  \item move to this directory;
+  \item clone te project with \texttt{git clone <gitURL>} (you have to retrieve \texttt{gitURL} from the web page);
+  \item create you own branch with \texttt{git branch -b devLastnameFirstname} (obviously, adapt Lastname and Firstname). Reminder: you might want to read the section on branches from a git tutorial\footnoteURL{https://bioinfo-fr.net/git-usage-collaboratif}
+\end{enumerate}
+From there, you are strongly encouraged to use git profusely and commit at least at each step.
+\end{etape}
+
+
+
 \section{Representing a class of students}
 
 \subsection{Class \texttt{Student}: methods overload}
@@ -254,32 +273,32 @@ Student donald = new Student("donald", 10.5);
 \end{minted}
 
 
-\subsection{Class \texttt{Promo}: inheritance and static methods}
+\subsection{Class \texttt{StudentGroup}: inheritance and static methods}
 
 
 \begin{etape}
- Create a class \texttt{Promo} that represents a set of students. \texttt{Promo} is a sub-class of \texttt{java.util.ArrayList}\footnoteURL{http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html}. Make sure to read the documentation for \texttt{ArrayList}, you will need it soon.
-Please note that \texttt{ArrayList} is a generic class, whereas all the elements of a \texttt{Promo} instance are composed of instances of \texttt{Student}, so you will need to state that \texttt{Promo} is a subclass of \texttt{ArrayList<Student>}. 
+ Create a class \texttt{StudentGroup} that represents a set of students. \texttt{StudentGroup} is a sub-class of \texttt{java.util.ArrayList}\footnoteURL{http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html}. Make sure to read the documentation for \texttt{ArrayList}, you will need it soon.
+Please note that \texttt{ArrayList} is a generic class, whereas all the elements of a \texttt{StudentGroup} instance are composed of instances of \texttt{Student}, so you will need to state that \texttt{StudentGroup} is a subclass of \texttt{ArrayList<Student>}. 
 \end{etape}
 
 \begin{etape}
- In the \texttt{Promo}'s \texttt{main(...)} method, create an instance \texttt{m1bioinfo} of  \texttt{Promo}, and add the members \texttt{riri}, \texttt{fifi}, \texttt{geo}, \texttt{donald} and \texttt{loulou} (respect this order so that the highest and lowest grades are in the middle of the list. The idea here is to avoid having the students almost sorted for the clustering).
+ In the \texttt{StudentGroup}'s \texttt{main(...)} method, create an instance \texttt{m1bioinfo} of  \texttt{StudentGroup}, and add the members \texttt{riri}, \texttt{fifi}, \texttt{geo}, \texttt{donald} and \texttt{loulou} (respect this order so that the highest and lowest grades are in the middle of the list. The idea here is to avoid having the students almost sorted for the clustering).
 \end{etape}
 
 \begin{etape}
- Add the methods \texttt{getMinGrade()}, \texttt{getMaxGrade()} et \texttt{getAverageGrade() to the class \texttt{Promo}}.
+ Add the methods \texttt{getMinGrade()}, \texttt{getMaxGrade()} et \texttt{getAverageGrade() to the class \texttt{StudentGroup}}.
 %Vous aurez peut-être besoin des fonctions \texttt{Math.min(...)} et \texttt{Math.max(...)}.
 The class \texttt{java.lang.Math}\footnoteURL{http://docs.oracle.com/javase/7/docs/api/java/lang/Math.html} has several useful methods.
 For iterating over all the students that compose a promotion, you can seek inspiration from the article ``\textit{Traversing collections}''\footnoteURL{http://docs.oracle.com/javase/tutorial/collections/interfaces/collection.html}.
-Feel glad to have declared \texttt{Promo} as a subclass of \texttt{ArrayList}.
+Feel glad to have declared \texttt{StudentGroup} as a subclass of \texttt{ArrayList}.
 \end{etape}
 
 \begin{etape}
- In the \texttt{main(...)} method of \texttt{Promo}, add the code for printing the lowest grade, the highest and the average for \texttt{m1bioinfo}.
+ In the \texttt{main(...)} method of \texttt{StudentGroup}, add the code for printing the lowest grade, the highest and the average for \texttt{m1bioinfo}.
 \end{etape}
 
 \begin{etape}
- The \texttt{PromoLoader} class (\fixme{fournie sur l'ENT}) has a method \texttt{loadTsvFile(...)} that takes as argument a text file (one student per line; its identifier, a tabulation, its grade) for creating an instance of \texttt{Promo}. Why is the method \texttt{loadTsvFile(...)} declared as ``\texttt{static}''? 
+ The \texttt{StudentGroupLoader} class (\fixme{fournie sur l'ENT}) has a method \texttt{loadTsvFile(...)} that takes as argument a text file (one student per line; its identifier, a tabulation, its grade) for creating an instance of \texttt{StudentGroup}. Why is the method \texttt{loadTsvFile(...)} declared as ``\texttt{static}''? 
  Draw the parallel with the methods \texttt{min(...)}, \texttt{max(...)} and \texttt{abs(...)} from \texttt{java.lang.Math}.
 \end{etape}
 
@@ -362,7 +381,7 @@ After clustering, a complex cluster is composed of sub-clusters that are interme
  \begin{itemize}
   \item a default constructor \texttt{ClusterOfStudents()} that creates an empty cluster (we do not reaaly need it, but I find it cleaner to have a default constructor);
   \item a constructor for simple clusters \texttt{ClusterOfStudents(Student aStudent)};
-  \item a constructor for complex clusters before clustering \texttt{ClusterOfStudents(Promo aPromo)}.
+  \item a constructor for complex clusters before clustering \texttt{ClusterOfStudents(StudentGroup aStudentGroup)}.
  \end{itemize}
 \end{etape}
 
@@ -441,9 +460,9 @@ Figure~\ref{fig:dendrogramClusterized-m1bigBranchLength} shows that by making th
 \end{figure}
 
 
-\section{Extensions facultatives}
+\section{Optional extensions}
 
-\subsection{Amélioration du dendrogramme}
+\subsection{Dendrogram improvement}
 \label{sec:ameliorationDendrogramme}
 
 Le format Newick permet d'indiquer la longueur de chacun des branches.
@@ -467,6 +486,13 @@ Utilisez plutôt l'application FigTree\footnoteURL{http://tree.bio.ed.ac.uk/softw
 
 
 \subsection{Modélisation de \texttt{ClusterOfStudents}}
+
+\begin{etape}
+ Should we have declared \texttt{ClusterOfStudents} as a subclass of \texttt{StudentGroup}?
+ Are theses classes' internal structures compatible?
+ Are there \texttt{StudentGroup}'s attribute or methods for which such an inheritance would make sense?
+\end{etape}
+
 
 Dans la classe \texttt{ClusterOfStudents}, chaque instance d'étudiant apparaît deux fois~:
 \begin{itemize}

@@ -289,32 +289,33 @@ Student donald = new Student("donald", 10.5);
 
 
 
-\subsection{Class \texttt{StudentGroup}: inheritance and static methods}
+\subsection{Class \texttt{GroupOfStudents}: inheritance and static methods}
 
 
 \begin{etape}
- Create a class \texttt{StudentGroup} that represents a set of students. \texttt{StudentGroup} is a sub-class of \texttt{java.util.ArrayList}\footnoteURL{http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html}. Make sure to read the documentation for \texttt{ArrayList}, you will need it soon.
-Please note that \texttt{ArrayList} is a generic class, whereas all the elements of a \texttt{StudentGroup} instance are composed of instances of \texttt{Student}, so you will need to state that \texttt{StudentGroup} is a subclass of \texttt{ArrayList<Student>}. 
+ Create a class \texttt{GroupOfStudents} that represents a set of students.\\ 
+ \texttt{GroupOfStudents} is a sub-class of \texttt{java.util.ArrayList}\footnoteURL{http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html}. Make sure to read the documentation for \texttt{ArrayList}, you will need it soon.
+Please note that \texttt{ArrayList} is a generic class, whereas all the elements of a \texttt{GroupOfStudents} instance are composed of instances of \texttt{Student}, so you will need to state that \texttt{GroupOfStudents} is a subclass of \texttt{ArrayList<Student>}. 
 \end{etape}
 
 \begin{etape}
- In the \texttt{StudentGroup}'s \texttt{main(...)} method, create an instance \texttt{m1bioinfo} of  \texttt{StudentGroup}, and add the members \texttt{riri}, \texttt{fifi}, \texttt{geo}, \texttt{donald} and \texttt{loulou} (respect this order so that the highest and lowest grades are in the middle of the list. The idea here is to avoid having the students almost sorted for the clustering).
+ In the \texttt{GroupOfStudents}'s \texttt{main(...)} method, create an object \texttt{m1bioinfo} as an instance of \texttt{GroupOfStudents}, and add the members \texttt{riri}, \texttt{fifi}, \texttt{geo}, \texttt{donald} and \texttt{loulou} (respect this order so that the highest and lowest grades are in the middle of the list. The idea here is to avoid having the students almost sorted for the clustering).
 \end{etape}
 
 \begin{etape}
- Add the methods \texttt{getMinGrade()}, \texttt{getMaxGrade()} et \texttt{getAverageGrade() to the class \texttt{StudentGroup}}.
+ Add the methods \texttt{getMinGrade()}, \texttt{getMaxGrade()} et \texttt{getAverageGrade() to the class \texttt{GroupOfStudents}}.
 %Vous aurez peut-être besoin des fonctions \texttt{Math.min(...)} et \texttt{Math.max(...)}.
 The class \texttt{java.lang.Math}\footnoteURL{http://docs.oracle.com/javase/7/docs/api/java/lang/Math.html} has several useful methods.
 For iterating over all the students that compose a promotion, you can seek inspiration from the article ``\textit{Traversing collections}''\footnoteURL{http://docs.oracle.com/javase/tutorial/collections/interfaces/collection.html}.
-Feel glad to have declared \texttt{StudentGroup} as a subclass of \texttt{ArrayList}.
+Feel glad to have declared \texttt{GroupOfStudents} as a subclass of \texttt{ArrayList}.
 \end{etape}
 
 \begin{etape}
- In the \texttt{main(...)} method of \texttt{StudentGroup}, add the code for printing the lowest grade, the highest and the average for \texttt{m1bioinfo}.
+ In the \texttt{main(...)} method of \texttt{GroupOfStudents}, add the code for printing the lowest grade, the highest and the average for \texttt{m1bioinfo}.
 \end{etape}
 
 \begin{etape}
- The \texttt{StudentGroupLoader} class (provided in the \texttt{src} directory) has a method \texttt{loadTsvFile(...)} that takes as argument a text file (one student per line; its identifier, a tabulation, its grade) for creating an instance of \texttt{StudentGroup}. Why is the method \texttt{loadTsvFile(...)} declared as ``\texttt{static}''? 
+ The \texttt{GroupOfStudentsLoader} class (provided in the \texttt{src} directory) has a method \texttt{loadTsvFile(...)} that takes as argument a text file (one student per line; its identifier, a tabulation, its grade) for creating an instance of \texttt{GroupOfStudents}. Why is the method \texttt{loadTsvFile(...)} declared as ``\texttt{static}''? 
  Draw the parallel with the methods \texttt{min(...)}, \texttt{max(...)} and \texttt{abs(...)} from \texttt{java.lang.Math}.
 \end{etape}
 
@@ -400,7 +401,7 @@ After clustering, a complex cluster is composed of sub-clusters that are interme
  \begin{itemize}
   \item a default constructor \texttt{ClusterOfStudents()} that creates an empty cluster (we do not reaaly need it, but I find it cleaner to have a default constructor);
   \item a constructor for simple clusters \texttt{ClusterOfStudents(Student aStudent)};
-  \item a constructor for complex clusters before clustering \texttt{ClusterOfStudents(StudentGroup aStudentGroup)}.
+  \item a constructor for complex clusters before clustering \texttt{ClusterOfStudents(GroupOfStudents aGroupOfStudents)}.
  \end{itemize}
 \end{etape}
 
@@ -515,19 +516,19 @@ Rather use FigTree\footnoteURL{http://tree.bio.ed.ac.uk/software/figtree/} or th
 \end{etape}
 
 
-\subsection{Modélisation de \texttt{ClusterOfStudents}}
+\subsection{Modeling considerations for \texttt{ClusterOfStudents}}
 
 \begin{etape}
- Should we have declared \texttt{ClusterOfStudents} as a subclass of \texttt{StudentGroup}?
+ Should we have declared \texttt{ClusterOfStudents} as a subclass of \texttt{GroupOfStudents}?
  Are theses classes' internal structures compatible?
- Are there \texttt{StudentGroup}'s attribute or methods for which such an inheritance would make sense?
+ Are there \texttt{GroupOfStudents}'s attribute or methods for which such an inheritance would make sense?
 \end{etape}
 
 
-Dans la classe \texttt{ClusterOfStudents}, chaque instance d'étudiant apparaît deux fois~:
+In the class \texttt{ClusterOfStudents}, each \texttt{Student} instance appears twice:
 \begin{itemize}
- \item dans l'attribut \texttt{subClusters} puisque le dendrogramme a autant de sous-clusters feuilles que d'étudiants~;
- \item dans l'attribut \texttt{students} qui permet un parcours plus simple de la liste des étudiants d'un cluster en évitant de devoir parcourir récursivement tout le dendrogramme à chaque fois.
+ \item in the attribute \texttt{subClusters} because the dendrogram has as many sub-cluster leaves as students;
+ \item in the attribute \texttt{students} qui permet un parcours plus simple de la liste des étudiants d'un cluster en évitant de devoir parcourir récursivement tout le dendrogramme à chaque fois.
 \end{itemize}
 
 On pourrait penser que cela occupe donc deux fois plus de place en mémoire que nécessaire, même si dans notre cas ce surcoût est acceptable dans la mesure où chaque instance occupe peu de place mémoire et qu'il y a relativement peu d'étudiants.

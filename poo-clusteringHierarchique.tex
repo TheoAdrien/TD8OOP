@@ -525,26 +525,29 @@ Rather use FigTree\footnoteURL{http://tree.bio.ed.ac.uk/software/figtree/} or th
 \end{etape}
 
 
-In the class \texttt{ClusterOfStudents}, each \texttt{Student} instance appears twice:
+In the class \texttt{ClusterOfStudents}, each instance of \texttt{Student} appears twice:
 \begin{itemize}
  \item in the attribute \texttt{subClusters} because the dendrogram has as many sub-cluster leaves as students;
  \item in the attribute \texttt{students} qui permet un parcours plus simple de la liste des étudiants d'un cluster en évitant de devoir parcourir récursivement tout le dendrogramme à chaque fois.
 \end{itemize}
 
-On pourrait penser que cela occupe donc deux fois plus de place en mémoire que nécessaire, même si dans notre cas ce surcoût est acceptable dans la mesure où chaque instance occupe peu de place mémoire et qu'il y a relativement peu d'étudiants.
-Néanmoins, Java ne duplique évidemment pas les instances de \texttt{Student} dans les deux attributs. 
-Chaque attribut ne contient en fait que les adresses des instances de \texttt{Student} (on appelle ça un \emph{passage d'objet par référence}).
-Ainsi, si vous modifiez la note d'un étudiant dans \texttt{students}, cette modification apparaîtra également dans \texttt{subClusters}, et inversement.
+One could have the impression that this results in doubling the memory usage (event if in our case the overhead would be perfectly acceptable, as each instance takes up a small space in memory and there are few students).
+However, Java obviously does not duplicates the \texttt{Student} instances in both attributes.
+Each attributes only contains references to the \texttt{Student} instances (i.e. their address).
+In addition to avoiding unnecessary object duplication, the second benefit is that it preserves consistency: changing a student's grade in the 
+\texttt{students} attribute will result in the change being visible if you later access this student through the \texttt{subClusters} attribute (and conversely).
 
-Au final, le fait d'utiliser deux attributs qui semblent redondants parce qu'ils contiennent les mêmes objets~:
+Overall, using two attributes seemingly redundant because they contain (references to) the same objects:
 \begin{itemize}
- \item a l'avantage principal d'améliorer le temps de traitement en évitant un parcours de l'arborescence du dendrogramme chaque fois que l'on souhaite parcourir les étudiants (et cela arrive souvent durant l'étape de clustering)~;
- \item a l'avantage secondaire de simplifier l'écriture de la classe en vous dispensant justement d'écrire la fonction de parcours de l'arborescence du dendrogramme~;
- \item a l'inconvénient d'augmenter légèrement la consommation de la mémoire.
+ \item has the main advantage of improving processing performances by avoiding to traverse the dendrogram when retrieving the list of students (which happens often during clustering). This was actually the motivation for introducing the \texttt{students} attribute.
+ \item has the secundary advantage of dispensing you from writing the dendrognam traversal function that would have been necessary for retrieving the list of students.
+\item has the drawback of increasing the memory footprint.
 \end{itemize}
 
+
+
 \begin{etape}
- Écrivez une classe \texttt{ClusterOfStudentsBis} qui ne contient que l'attribut \texttt{subClusters}. Comparez les temps de clusterisation de \texttt{ClusterOfStudents} et de \texttt{ClusterOfStudentsBis}.
+ Create a class \texttt{ClusterOfStudentsBis} that only constains the attribute \texttt{subClusters}. Compare the respective clustering time of \texttt{ClusterOfStudents} and \texttt{ClusterOfStudentsBis}.
 \end{etape}
 
  

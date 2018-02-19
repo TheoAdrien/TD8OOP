@@ -39,9 +39,9 @@ public class GroupOfStudents extends ArrayList<Student> {
 		m1bio.add(donald);
 		
 		// TODO: uncomment when needed
-		System.out.println("Grade min: " + m1bio.getMinGrade());
-		System.out.println("Grade max: " + m1bio.getMaxGrade());
-		System.out.println("Average: " + m1bio.getAverageGrade());
+		//System.out.println("Grade min: " + m1bio.getMinGrade());
+		//System.out.println("Grade max: " + m1bio.getMaxGrade());
+		//System.out.println("Average: " + m1bio.getAverageGrade());
 	}
 
 }

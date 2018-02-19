@@ -232,22 +232,35 @@ From the object-oriented programming point of view, this is an excellent opportu
 
 \subsection{Cloning the project}
 
-The project's description, the Java source files and some example datasets can be retrieved from its git repository\footnoteURL{https://gitlab.com/odameron/javaHierarchicalClustering}.
+The project's description, the Java source files and some example datasets can be retrieved from its git repository\\%\footnoteURL{https://gitlab.com/odameron/javaHierarchicalClustering}.
+\url{https://gitlab.com/odameron/javaHierarchicalClustering}
 
-\fixme{We should definitely do a fork instead. Change git remote origin}
-
-\fixme{Encourage the students to create their own repository on gitlab or github so that we can monitor their progress}
 
 \begin{etape}
  Set up your working environment:
  \begin{enumerate}
-  \item create an empty local directory;
-  \item move to this directory;
-  \item clone te project with \texttt{git clone <gitURL>} (you have to retrieve \texttt{gitURL} from the web page);
-  \item create you own branch with \texttt{git branch -b devLastnameFirstname} (obviously, adapt Lastname and Firstname). Reminder: you might want to read the section on branches from a git tutorial\footnoteURL{https://bioinfo-fr.net/git-usage-collaboratif}
+  %\item create an empty local directory;
+  \item move to your local directory where you want to import the project source;
+  \item clone the project with \texttt{git clone <gitURL>} (you have to retrieve \texttt{gitURL} from the web page), or download the zip file (the link is on the right of \texttt{gitURL});
+  \item move to the newly created directory \texttt{javaHierarchicalClustering/}
 \end{enumerate}
-From now on, you are strongly encouraged to use git profusely and commit at least at each step.
 \end{etape}
+
+\begin{etape}
+ (Optional) If you used git:
+ \begin{enumerate}
+  \item if you do not already have one, create an account on a hosting service (e.g. gitlab\footnoteURL{https://gitlab.com} or github\footnoteURL{https://github.com});
+  \item create an empty project (public or private) from your git hosting service;
+  \item \texttt{git remote rename origin origin-old}
+  \item \texttt{git remote add origin https://gitlab.com/yourUserName/yourProjectName.git}
+  \item \texttt{git push -u origin --all}
+  %\item \texttt{git push -u origin --tags}
+  \item send us the URL for your project (if it is public) or invite us as contributors (if it is private) so that we can monitor your progress;
+  \item if you are already comfortable with git, create you own branch with \texttt{git branch -b devLastnameFirstname} (obviously, adapt Lastname and Firstname). Reminder: you might want to read the section on branches from a git tutorial\footnoteURL{https://bioinfo-fr.net/git-usage-collaboratif};
+  \item From now on, you are strongly encouraged to use git profusely and commit at least at each step.
+ \end{enumerate}
+\end{etape}
+
 
 
 \subsection{Configure your editor}

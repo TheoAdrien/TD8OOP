@@ -56,27 +56,30 @@ public class ClusterOfStudentsWeighted extends ClusterOfStudents{
 		m1bio.add(geo);
 		m1bio.add(donald);
 		
-		ClusterOfStudentsWeighted bioCluster = new ClusterOfStudentsWeighted(m1bio);
-		System.out.println("Before clustering:");
-		System.out.println(bioCluster.getNewick());
-		bioCluster.clusterize();
-		System.out.println("");
-		System.out.println("After clustering:");
-		System.out.println(bioCluster.getNewick());
+		// TODO: uncomment when needed
+		//ClusterOfStudentsWeighted bioCluster = new ClusterOfStudentsWeighted(m1bio);
+		//System.out.println("Before clustering:");
+		//System.out.println(bioCluster.getNewick());
+		//bioCluster.clusterize();
+		//System.out.println("");
+		//System.out.println("After clustering:");
+		//System.out.println(bioCluster.getNewick());
 		
-		System.out.println("");
-		ClusterOfStudentsWeighted bioAnonymous = new ClusterOfStudentsWeighted(GroupOfStudentsLoader.loadTsvFile("/path/to/grades_final_anonymized.tsv"));
-		bioAnonymous.clusterize();
-		System.out.println(bioAnonymous.getNewick());
+		// TODO: uncomment when needed
+		//System.out.println("");
+		//ClusterOfStudentsWeighted bioAnonymous = new ClusterOfStudentsWeighted(GroupOfStudentsLoader.loadTsvFile("/path/to/grades_final_anonymized.tsv"));
+		//bioAnonymous.clusterize();
+		//System.out.println(bioAnonymous.getNewick());
 		
-		GroupOfStudents od = new GroupOfStudents();
-		od.add(geo);
-		od.add(loulou);
-		od.add(donald);
-		ClusterOfStudentsWeighted odCluster = new ClusterOfStudentsWeighted(od);
-		odCluster.clusterize();
-		System.out.println("");
-		System.out.println(odCluster.getNewick());
+		// TODO: uncomment when needed
+		//GroupOfStudents od = new GroupOfStudents();
+		//od.add(geo);
+		//od.add(loulou);
+		//od.add(donald);
+		//ClusterOfStudentsWeighted odCluster = new ClusterOfStudentsWeighted(od);
+		//odCluster.clusterize();
+		//System.out.println("");
+		//System.out.println(odCluster.getNewick());
 
 	}
 

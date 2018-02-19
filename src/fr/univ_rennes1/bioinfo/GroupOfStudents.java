@@ -1,13 +1,13 @@
 package fr.univ_rennes1.bioinfo;
 
-import java.util.Vector;
+import java.util.ArrayList;
 
 
 /**
  * @author Olivier Dameron
  *
  */
-public class GroupOfStudents extends Vector<Student> {
+public class GroupOfStudents extends ArrayList<Student> {
 	
 	public double getMinGrade() {
 		// TODO: DO SOMETHING HERE and uncomment the method call in the main(...)

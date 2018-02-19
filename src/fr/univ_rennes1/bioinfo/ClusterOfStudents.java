@@ -1,8 +1,7 @@
 package fr.univ_rennes1.bioinfo;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Vector;
+
 
 /**
  * Represents a cluster of objects.
@@ -13,8 +12,8 @@ import java.util.Vector;
  */
 public class ClusterOfStudents {
 	
-	protected List<Cluster> subClusters;
-	protected Vector<Student> students;
+	protected ArrayList<Cluster> subClusters;
+	protected ArrayList<Student> students;
 	
 	public Cluster(){
 		// TODO: DO SOMETHING HERE

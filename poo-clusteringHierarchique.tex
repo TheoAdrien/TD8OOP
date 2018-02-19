@@ -249,6 +249,7 @@ The project's description, the Java source files and some example datasets can b
 \begin{etape}
  (Optional) If you used git:
  \begin{enumerate}
+  \item read the tutorial at \url{https://gitlab.com/odameron/git-simple-tutorial} (specially the ``Use git'' section);
   \item if you do not already have one, create an account on a hosting service (e.g. gitlab\footnoteURL{https://gitlab.com} or github\footnoteURL{https://github.com});
   \item create an empty project (public or private) from your git hosting service;
   \item \texttt{git remote rename origin origin-old}
@@ -283,11 +284,17 @@ The project's description, the Java source files and some example datasets can b
  Add a first constructor having for parameters an identifier and a grade.
  Then add a second constructor having an identifier as single parameter.
  This is an excellent opportunity to use method overload...
+ Do not forget fot fill the docstring comments.
+ Run javadoc, commit your changes and push them to your remote repository.
 \end{etape}
+
+
+
 
 \begin{etape}
 \label{etape:studentMethods}
  Add the methods \texttt{getIdent()}, \texttt{getGrade()} et \texttt{setGrade(double newGrade)}.
+ Run javadoc, commit your changes and push them to your remote repository.
 \end{etape}
 
 
@@ -313,7 +320,7 @@ Student donald = new Student("donald", 10.5);
 
 
 \begin{etape}
- \fixme{run javadoc and commit}
+ Run javadoc, commit your changes and push them to your remote repository.
 \end{etape}
 
 
@@ -323,7 +330,7 @@ Student donald = new Student("donald", 10.5);
 
 \begin{etape}
  Create a class \texttt{GroupOfStudents} that represents a set of students.\\ 
- \texttt{GroupOfStudents} is a sub-class of \texttt{java.util.ArrayList}\footnoteURL{http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html}. Make sure to read the documentation for \texttt{ArrayList}, you will need it soon.
+ \texttt{GroupOfStudents} is a sub-class of \texttt{java.util.ArrayList}\footnoteURL{http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html} \fixme{or \texttt{java.util.Vector}???}. Make sure to read the documentation for \texttt{ArrayList}, you will need it soon.
 Please note that \texttt{ArrayList} is a generic class, whereas all the elements of a \texttt{GroupOfStudents} instance are composed of instances of \texttt{Student}, so you will need to state that \texttt{GroupOfStudents} is a subclass of \texttt{ArrayList<Student>}. 
 \end{etape}
 
@@ -340,16 +347,21 @@ Feel glad to have declared \texttt{GroupOfStudents} as a subclass of \texttt{Arr
 \end{etape}
 
 \begin{etape}
+ Run javadoc, commit your changes and push them to your remote repository.
+\end{etape}
+
+
+\begin{etape}
  In the \texttt{main(...)} method of \texttt{GroupOfStudents}, add the code for printing the lowest grade, the highest and the average for \texttt{m1bioinfo}.
+\end{etape}
+
+\begin{etape}
+ Run javadoc, commit your changes and push them to your remote repository.
 \end{etape}
 
 \begin{etape}
  The \texttt{GroupOfStudentsLoader} class (provided in the \texttt{src} directory) has a method \texttt{loadTsvFile(...)} that takes as argument a text file (one student per line; its identifier, a tabulation, its grade) for creating an instance of \texttt{GroupOfStudents}. Why is the method \texttt{loadTsvFile(...)} declared as ``\texttt{static}''? 
  Draw the parallel with the methods \texttt{min(...)}, \texttt{max(...)} and \texttt{abs(...)} from \texttt{java.lang.Math}.
-\end{etape}
-
-\begin{etape}
- \fixme{run javadoc and commit}
 \end{etape}
 
 
@@ -371,7 +383,7 @@ There are two main approaches for determining this organization:
  \item the \textbf{divisive approach} (also called descending) starts by gathering all the elements into a single cluster, and then iteratively decompose the clusters into subclusters until each of them is only composed of a single element.
 \end{itemize}
 
-The divisive approach requires more operations than the agglomerative one and is therefore longer... except when we only need the most general clusters (e.g. to separate a sample into two groups).
+The divisive approach requires more operations than the agglomerative one and is therefore usually longer... except when we only need the most general clusters (e.g. to separate a sample into two groups).
 
 
 
@@ -421,7 +433,7 @@ After clustering, a complex cluster is composed of sub-clusters that are interme
 \label{sec:clusterInitialisation}
 
 \begin{etape}
- Create a \texttt{ClusterOfStudents} with a \texttt{subclusters} attribute that represents the list of its sub-clusters. 
+ Create a \texttt{ClusterOfStudents} with an attribute \texttt{subclusters} that represents the list of its sub-clusters. 
  For simplifying the clustering step (when marshalling the students composing the cluster), add an attribute \texttt{students} that represents the set of students constituting the leaves of the cluster.
 \end{etape}
 
@@ -435,13 +447,19 @@ After clustering, a complex cluster is composed of sub-clusters that are interme
 \end{etape}
 
 \begin{etape}
+ Run javadoc, commit your changes and push them to your remote repository.
+\end{etape}
+
+
+\begin{etape}
 \label{etape:clusterInitialisationM1big}
  In \texttt{ClusterOfStudents}' \texttt{main(...)} main method, create an instance of a simple cluster \texttt{geoCluster} initialized with \texttt{geo}, and an instance of complex cluster \texttt{bioCluster} initialized with \texttt{m1bioinfo}.
 \end{etape}
 
 \begin{etape}
- \fixme{run javadoc and commit}
+ Run javadoc, commit your changes and push them to your remote repository.
 \end{etape}
+
 
 
 \subsubsection{Visualization}
@@ -463,12 +481,18 @@ NB~: for visualizing dendrograms, we could as well have used the R functions via
 \end{etape}
 
 \begin{etape}
+ Run javadoc, commit your changes and push them to your remote repository.
+\end{etape}
+
+
+\begin{etape}
  Generate a Newick representation of \texttt{bioCluster} and check (for example with T-REX or dendroscope) whether you get something similar to Fig.~\ref{fig:dendrogramFlat}.
 \end{etape}
 
 \begin{etape}
- \fixme{run javadoc and commit}
+ Run javadoc, commit your changes and push them to your remote repository.
 \end{etape}
+
 
 
 
@@ -477,23 +501,26 @@ NB~: for visualizing dendrograms, we could as well have used the R functions via
 \begin{etape}
  Add a method \texttt{linkage(ClusterOfStudents anotherCluster)} that returns the distance between the current cluster and \texttt{anotherCluster}. 
  Choosing the average of the absolute value of the grade differences for each combination of students from each cluster is probably the easiest solution.
+ Run javadoc, commit your changes and push them to your remote repository.
 \end{etape}
 
 \begin{etape}
  In \texttt{ClusterOfStudents}'s \texttt{main(...)} method, create two simple clusters \texttt{loulouCluster} and \texttt{donaldCluster} and check whether the distance between \texttt{geoCluster}, \texttt{loulouCluster} and \texttt{donaldCluster} are what you expect them to be (check the six combinations).
+ Run javadoc, commit your changes and push them to your remote repository.
 \end{etape}
 
 \begin{etape}
 In \texttt{ClusterOfStudents}'s \texttt{main(...)} method, create the complex cluster  \texttt{geoLoulouCluster} and check whether its distance with \texttt{donaldCluster} and \texttt{geoLoulouCluster} (and conversely).
+Run javadoc, commit your changes and push them to your remote repository.
 \end{etape}
 
 \begin{etape}
  Add a method  \texttt{clusterizeAgglomerative()}.
- Perform clustering on \texttt{bigCluster} and display the result as a Newick string.
+ Perform clustering on \texttt{bioCluster} and display the result as a Newick string.
 \end{etape}
 
 \begin{etape}
- \fixme{run javadoc and commit}
+ Run javadoc, commit your changes and push them to your remote repository.
 \end{etape}
 
 
@@ -530,10 +557,12 @@ Rather use FigTree\footnoteURL{http://tree.bio.ed.ac.uk/software/figtree/} or th
 
 \begin{etape}
  Improve the \texttt{getNewick()} method so that all the leaves are at the same level (i.e. aligned on the right, contrary to Fig.~\ref{fig:dendrogramClusterized-m1big}).
+ Run javadoc, commit your changes and push them to your remote repository.
 \end{etape}
 
 \begin{etape}
  Improve the \texttt{getNewick()} method so that all the leaves are at the same level and the branches' length are proportional to the (absolute value of) the difference between the grades.
+ Run javadoc, commit your changes and push them to your remote repository.
 \end{etape}
 
 
@@ -541,7 +570,9 @@ Rather use FigTree\footnoteURL{http://tree.bio.ed.ac.uk/software/figtree/} or th
 \subsection{Divisive approach}
 
 \begin{etape}
- Add a method \texttt{clusterizeDivisive()} to the class \texttt{ClusterOfStudents}. Perform clustering on \texttt{bioCluster} and compare with teh agglomerative approach.
+ Add a method \texttt{clusterizeDivisive()} to the class \texttt{ClusterOfStudents}. 
+ Perform clustering on \texttt{bioCluster} and compare with teh agglomerative approach.
+ Run javadoc, commit your changes and push them to your remote repository.
 \end{etape}
 
 
@@ -576,7 +607,9 @@ Overall, using two attributes seemingly redundant because they contain (referenc
 
 
 \begin{etape}
- Create a class \texttt{ClusterOfStudentsBis} that only constains the attribute \texttt{subClusters}. Compare the respective clustering time of \texttt{ClusterOfStudents} and \texttt{ClusterOfStudentsBis}.
+ Create a class \texttt{ClusterOfStudentsBis} that only constains the attribute \texttt{subClusters}. 
+ Compare the respective clustering time of \texttt{ClusterOfStudents} and \texttt{ClusterOfStudentsBis}.
+ Run javadoc, commit your changes and push them to your remote repository.
 \end{etape}
 
  

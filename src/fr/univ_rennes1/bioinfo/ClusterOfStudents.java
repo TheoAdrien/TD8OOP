@@ -12,22 +12,22 @@ import java.util.ArrayList;
  */
 public class ClusterOfStudents {
 	
-	protected ArrayList<Cluster> subClusters;
+	protected ArrayList<ClusterOfStudents> subClusters;
 	protected ArrayList<Student> students;
 	
-	public Cluster(){
+	public ClusterOfStudents(){
 		// TODO: DO SOMETHING HERE
 	}
 	
-	public Cluster(Student aStudent){
+	public ClusterOfStudents(Student aStudent){
 		// TODO: DO SOMETHING HERE
 	}
 	
-	public Cluster(GroupOfStudents aGroupOfStudents) {
+	public ClusterOfStudents(GroupOfStudents aGroupOfStudents) {
 		// TODO: DO SOMETHING HERE
 	}
 	
-	public Cluster(ClusterOfStudents cluster1, ClusterOfStudents cluster2) {
+	public ClusterOfStudents(ClusterOfStudents cluster1, ClusterOfStudents cluster2) {
 		// TODO: DO SOMETHING HERE
 	}
 	
@@ -81,7 +81,7 @@ public class ClusterOfStudents {
 		System.out.println(bioCluster.getNewick());
 		
 		System.out.println("");
-		Cluster bioAnonymous = new ClusterOfStudents(GroupOfStudentsLoader.loadTsvFile("/path/to/grades_final_anonymized.tsv"));
+		ClusterOfStudents bioAnonymous = new ClusterOfStudents(GroupOfStudentsLoader.loadTsvFile("/path/to/grades_final_anonymized.tsv"));
 		bioAnonymous.clusterize();
 		System.out.println(bioAnonymous.getNewick());
 	}

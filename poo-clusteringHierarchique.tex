@@ -1,6 +1,6 @@
 \documentclass[a4paper,10pt]{article}
 
-\newcommand{\currentVersion}{1.4}
+\newcommand{\currentVersion}{1.5}
 
 
 %%% MARGES
@@ -420,9 +420,11 @@ This section aims at implementing the \texttt{ClusterOfStudents} class for repre
 A simple cluster is composed of a single instance of  \texttt{Student}.
 A complex cluster is composed of several sub-clusters which can themselves be either simple or complex clusters.
 A complex cluster has a tree-like structure where all the leaves are simple clusters.
+As we will see, there is no need to distinguish the simple and the complex clusters as subclasses of \texttt{ClusterOfStudents}.
 
 Initially, a complex cluster is only composed of simple clusters (Fig.~\ref{fig:dendrogramFlat}).
 After clustering, a complex cluster is composed of sub-clusters that are intermediate complex clusters (Fig.~\ref{fig:dendrogramClusterized})
+
 
 
 
@@ -449,7 +451,9 @@ After clustering, a complex cluster is composed of sub-clusters that are interme
 
 \begin{etape}
  Create a \texttt{ClusterOfStudents} with an attribute \texttt{subclusters} that represents the list of its sub-clusters. 
+ This list is obvisouly empty for simple clusters, and non-empty for complex clusters.
  For simplifying the clustering step (when marshalling the students composing the cluster), add an attribute \texttt{students} that represents the set of students constituting the leaves of the cluster.
+ This list is never empty; it contains a single element for simple clusters, and two elements or more for complex clusters.
 \end{etape}
 
 \begin{etape}
@@ -457,7 +461,7 @@ After clustering, a complex cluster is composed of sub-clusters that are interme
  \begin{itemize}
   \item a default constructor \texttt{ClusterOfStudents()} that creates an empty cluster (we do not reaaly need it, but I find it cleaner to have a default constructor);
   \item a constructor for simple clusters \texttt{ClusterOfStudents(Student aStudent)};
-  \item a constructor for complex clusters before clustering \texttt{ClusterOfStudents(GroupOfStudents aGroupOfStudents)}.
+  \item a constructor for complex clusters before clustering\\ \texttt{ClusterOfStudents(GroupOfStudents aGroupOfStudents)}.
  \end{itemize}
 \end{etape}
 

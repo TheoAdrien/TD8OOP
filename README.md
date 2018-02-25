@@ -10,4 +10,5 @@ A simple hierarchical clustering implementation in Java, and dendrogram-based vi
 - [x] include questions requiring the students to perform a git clone 
 - [ ] add a `doc` directory and ask the students to run javadoc 
 - [ ] add an empty `classes` or `bin` directory for compiling java source files (and adapt the `.gitignore`)
+- [ ] replace the `classes` directory by `bin` and adapt the text
 
